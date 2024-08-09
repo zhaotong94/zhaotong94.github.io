@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>📚文章 on Tong&#39;s Blog</title>
+    <title>📚 Posts on Tong&#39;Log</title>
     <link>https://zhaotong94.github.io/posts/</link>
-    <description>Recent content in 📚文章 on Tong&#39;s Blog</description>
+    <description>Recent content in 📚 Posts on Tong&#39;Log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en</language>
     <lastBuildDate>Wed, 30 Nov 2022 15:55:23 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

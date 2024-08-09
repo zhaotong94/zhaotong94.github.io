@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tong&#39;s Blog</title>
+    <title>Tong&#39;Log</title>
     <link>https://zhaotong94.github.io/</link>
-    <description>Recent content on Tong&#39;s Blog</description>
+    <description>Recent content on Tong&#39;Log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en</language>
     <lastBuildDate>Wed, 30 Nov 2022 15:55:23 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Redis scan命令学习</title>
+      <title>Redis scan</title>
       <link>https://zhaotong94.github.io/posts/tech/tech1/</link>
       <pubDate>Wed, 30 Nov 2022 15:55:23 +0800</pubDate>
       
@@ -62,12 +62,12 @@
     </item>
     
     <item>
-      <title>🙋🏻‍♂️关于</title>
+      <title>🙋🏻‍♂️ About</title>
       <link>https://zhaotong94.github.io/about/</link>
       <pubDate>Sat, 06 Nov 2021 14:57:28 +0800</pubDate>
       
       <guid>https://zhaotong94.github.io/about/</guid>
-      <description>关于我 英文名: Tong Zhao 职业: 助理教授 运动: 羽毛球</description>
+      <description>Name: Tong Zhao Occupation: Assisant Professor Sport: Badmintion</description>
     </item>
     
     
