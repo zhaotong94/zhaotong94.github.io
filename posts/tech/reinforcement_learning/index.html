@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.131.0"><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Tong&#39;Log</title>
-
-<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<title>Reinforcement_learning | Tong&#39;Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="Reinforcement_learning - Tong&#39;Log">
 <meta name="author" content="Tong">
-<link rel="canonical" href="https://zhaotong94.github.io/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://zhaotong94.github.io/img/Q.gif">
-<link rel="icon" type="image/png" sizes="16x16" href="https://zhaotong94.github.io/img/Q.gif">
-<link rel="icon" type="image/png" sizes="32x32" href="https://zhaotong94.github.io/img/Q.gif">
-<link rel="apple-touch-icon" href="https://zhaotong94.github.io/img/Q.gif">
-<link rel="mask-icon" href="https://zhaotong94.github.io/img/Q.gif">
+<link rel="canonical" href="http://localhost:1313/posts/tech/reinforcement_learning/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1d3401cbcdd2f10bdb5198bcf67bd24686c4792045e0991c052459ef4196f5cf.css" integrity="sha256-HTQBy83S8QvbUZi89nvSRobEeSBF4JkcBSRZ70GW9c8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+        onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://zhaotong94.github.io/index.xml">
-<link rel="alternate" type="application/json" href="https://zhaotong94.github.io/index.json">
-<link rel="alternate" hreflang="en" href="https://zhaotong94.github.io/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/tech/reinforcement_learning/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,6 +58,8 @@
 
     </style>
 </noscript>
+<script defer src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
@@ -75,33 +76,9 @@ var _hmt = _hmt || [];
 })();
 </script>
 
-  
-
-<meta property="og:title" content="Tong&#39;Log" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://zhaotong94.github.io/" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tong&#39;Log"/>
-<meta name="twitter:description" content=""/>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Tong'Log",
-  "url": "https://zhaotong94.github.io/",
-  "description": "",
-  "thumbnailUrl": "https://zhaotong94.github.io/img/Q.gif",
-  "sameAs": [
-      "https://github.com/zhaotong94", "img/wechat.jpg", "index.xml"
-  ]
-}
-</script>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     (function () {
         let  arr,reg = new RegExp("(^| )"+"change-themes"+"=([^;]*)(;|$)");
@@ -129,9 +106,7 @@ var _hmt = _hmt || [];
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://zhaotong94.github.io/" accesskey="h" title="Tong&#39;Log (Alt + H)">
-            <img src="https://zhaotong94.github.io/img/Q.gif" alt="logo" aria-label="logo"
-                 height="35">Tong&#39;Log</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Tong&#39;Log (Alt + H)">Tong&#39;Log</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -159,96 +134,234 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="https://zhaotong94.github.io/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search" title="🔍 Search (Alt &#43; /)" accesskey=/>
                 <span>🔍 Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://zhaotong94.github.io/" title="🏠 Home">
-                <span class="active">🏠 Home</span>
+                <a href="http://localhost:1313/" title="🏠 Home">
+                <span>🏠 Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://zhaotong94.github.io/posts" title="📚 Posts">
+                <a href="http://localhost:1313/posts" title="📚 Posts">
                 <span>📚 Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://zhaotong94.github.io/tags" title="🧩 Tags">
+                <a href="http://localhost:1313/tags" title="🧩 Tags">
                 <span>🧩 Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://zhaotong94.github.io/archives/" title="⏱️ Archive">
+                <a href="http://localhost:1313/archives/" title="⏱️ Archive">
                 <span>⏱️ Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://zhaotong94.github.io/about" title="🙋🏻‍♂️ Abouts">
+                <a href="http://localhost:1313/about" title="🙋🏻‍♂️ Abouts">
                 <span>🙋🏻‍♂️ Abouts</span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-<main class="main"><div class="profile">
-    <div class="profile_inner">
-        <img draggable="false" src="https://zhaotong94.github.io/profile.jpg" alt="profile image" title=""
-        height="200" width="150" />
-        <h1>Welcome to Tong&rsquo;Log</h1>
-        <span>On this website, you can find: popular science of common computer technologies, introductions to common artificial intelligence technologies, some of my personal essays and life videos, as well as academic papers I have published.</span><div class="social-icons">
-    <a href="https://github.com/zhaotong94" target="_blank" rel="noopener noreferrer me" title="Github">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-     stroke-linecap="round" stroke-linejoin="round">
-    <path
-            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-    </a>
-    <a href="img/wechat.jpg" target="_blank" rel="noopener noreferrer me" title="WeChat">
-    <svg t="1636854174935" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="22758" width="24" height="24"><path d="M981.333333 621.056C981.333333 488.277333 854.613333 384 699.733333 384c-154.88 0-281.6 104.277333-281.6 237.056 0 132.693333 126.72 237.013333 281.6 237.013333 28.16 0 56.32-4.736 84.48-9.472L873.386667 896l-23.466667-71.125333c79.786667-47.36 131.413333-118.485333 131.413333-203.818667z m-380.16-37.973333c-28.16 0-46.933333-18.944-46.933333-47.36 0-28.458667 18.773333-47.445333 46.933333-47.445334 28.16 0 46.933333 18.986667 46.933334 47.402667 0 23.722667-23.466667 47.445333-46.933334 47.445333z m192.426667 0c-28.16 0-46.933333-18.944-46.933333-47.36 0-28.458667 18.773333-47.445333 46.933333-47.445334 28.16 0 46.933333 18.986667 46.933333 47.402667 0 23.722667-23.466667 47.445333-46.933333 47.445333z" fill="#4CBF00" p-id="22759"></path><path d="M371.2 611.541333c0-146.944 140.8-265.472 319.146667-265.472h14.08C666.88 222.805333 540.16 128 380.586667 128 192.853333 128 42.666667 256 42.666667 412.458667 42.666667 512 103.68 602.026667 197.546667 649.472l-28.16 85.333333L277.333333 682.666667c32.853333 9.472 65.706667 14.208 103.253334 14.208h9.386666c-14.08-28.416-18.773333-56.874667-18.773333-85.333334z m126.72-384c32.853333 0 61.013333 28.458667 61.013333 61.653334s-28.16 61.610667-61.013333 61.610666c-32.853333-4.693333-61.013333-33.194667-61.013333-66.346666 0-33.194667 28.16-56.917333 61.013333-56.917334zM267.946667 346.069333c-32.853333 0-56.32-28.458667-56.32-61.610666 0-33.194667 28.16-61.653333 61.013333-61.653334 32.853333 0 56.32 28.458667 56.32 61.653334 0 33.152-28.16 61.610667-61.013333 61.610666z" fill="#4CBF00" p-id="22760"></path></svg>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
 
+<article class="post-single">
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="http://localhost:1313/">🏠 Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">📚 Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tech/">👨🏻‍💻 Tech</a></div>
+            <h1 class="post-title">
+                Reinforcement_learning
+            </h1>
+            <div class="post-meta">
 
-    </a>
-    <a href="index.xml" target="_blank" rel="noopener noreferrer me" title="RSS">
-    <svg t="1636858141530" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14103" width="24" height="24"><path d="M170.666667 810.666667m-128 0a128 128 0 1 0 256 0 128 128 0 1 0-256 0Z" fill="#FF6600" p-id="14104"></path><path d="M938.666667 938.666667h-170.666667c0-399.957333-325.376-725.333333-725.333333-725.333334V42.666667c494.037333 0 896 401.92 896 896z" fill="#FF6600" p-id="14105"></path><path d="M640 938.666667h-170.666667c0-235.264-191.424-426.666667-426.666666-426.666667v-170.666667c329.386667 0 597.333333 267.946667 597.333333 597.333334z" fill="#FF6600" p-id="14106"></path></svg>
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
 
-    </a>
+    .parent-post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+</style>
+
+<span class="parent-post-meta">
+    <span id="post_meta_style_1">
+        <span class="fa fa-calendar-check-o"></span>
+        <span>August 9, 2024
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>0 words
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>0 mins
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>Tong
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+            </span>
+        </span>
+    </span>
+</span>
+<span style="opacity: 0.8;">
+                    <span id="post_meta_style_7">
+                        &nbsp;&nbsp;
+                        <span class="fa fa-eye" ></span>
+                        <span>
+                            <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+                            &nbsp;&nbsp;
+                        </span>
+                    </span>
+                    <span id="post_meta_style_8">
+                        <span class="fa fa-commenting-o"></span>
+                        <span>
+                            <script src="https://cdn.staticfile.org/twikoo//twikoo.all.min.js"></script>
+                            <script>
+                                let url = document.documentURI
+                                
+                                let dnsUrl = "http://localhost:1313/"
+                                let urlSplit = url.split(dnsUrl)
+                                let finalUrl = urlSplit[1]
+                                if (finalUrl[0] !== '/') {
+                                    finalUrl = '/'+finalUrl
+                                }
+                                twikoo.getCommentsCount({
+                                    envId:  null , 
+                                region:  null , 
+                                urls: [ 
+                                    
+                                    finalUrl,
+                                ],
+                                    includeReply: false 
+                                }).then(function (res) {
+                                    let count = res[0].count
+                                    const obj = document.getElementById("comment_count");
+                                    obj.innerText = count
+                                    
+                                    
+                                    
+                                }).catch(function (err) {
+                                    
+                                    console.error(err);
+                                });
+                            </script>
+                            <span id="comment_count"></span>
+                        </span>
+                    </span>
+                </span>
+
 </div>
-
-        <div class="buttons">
-            <a class="button" href="posts/blog" rel="noopener" title="🧱 Blog">
-            <span class="button-inner">
-                    🧱 Blog
-                </span>
-            </a>
-            <a class="button" href="posts/tech" rel="noopener" title="👨🏻‍💻 Tech">
-            <span class="button-inner">
-                    👨🏻‍💻 Tech
-                </span>
-            </a>
-            <a class="button" href="posts/read" rel="noopener" title="📕 Read">
-            <span class="button-inner">
-                    📕 Read
-                </span>
-            </a>
-            <a class="button" href="posts/life" rel="noopener" title="🏖 Life">
-            <span class="button-inner">
-                    🏖 Life
-                </span>
-            </a>
+        </header> 
+        <div class="post-reward">
+            <div style="padding: 0 0 0 0; margin: 0 0 0 0; width: 100%; font-size:16px; text-align: center;">
+                <div id="QR" style="opacity: 0;">
+                    <div id="wechat" style="display: inline-block">
+                        <a class="fancybox" rel="group">
+                            <img id="wechat_qr" src="http://localhost:1313/" alt="wechat_pay"></a>
+                        <p>微信</p>
+                    </div>
+                    <div id="alipay" style="display: inline-block">
+                        <a class="fancybox" rel="group">
+                            <img id="alipay_qr" src="http://localhost:1313/" alt="alipay"></a>
+                        <p>支付宝</p>
+                    </div>
+                </div>
+                <button id="rewardButton"
+                        onclick="
+                    var qr = document.getElementById('QR');
+                    if (qr.style.opacity === '0') {
+                        qr.style.opacity='1';
+                    } else {
+                        qr.style.opacity='0'
+                    }"
+                >
+                    <span>🧧 鼓励</span>
+                </button>
+            </div>
         </div>
-    </div>
-</div>
 
+        <footer class="post-footer">
+            
+        </footer>
+    </div>
+
+<style>
+    .comments_details summary::marker {
+        font-size: 15px;
+        content: '👉Comments';
+        color: var(--content);
+    }
+    .comments_details[open] summary::marker{
+        font-size: 15px;
+        content: '👇Collapse';
+        color: var(--content);
+    }
+</style>
+
+
+<div>
+    <details class="comments_details">
+        <summary style="cursor: pointer; margin: 50px 0 20px 0;width: 130px;">
+            <span style="font-size: 20px;color: var(--content);">...</span>
+        </summary>
+        <div id="tcomment"></div>
+    </details>
+    <script src="https://cdn.staticfile.org/twikoo//twikoo.all.min.js">
+    </script>
+    <script>
+        twikoo.init({
+            envId:  null ,
+        el: "#tcomment",
+            lang: 'zh-CN',
+            region:  null ,
+        path: window.TWIKOO_MAGIC_PATH||window.location.pathname,
+        })
+    </script>
+</div>
+</article>
 </main>
 
 <footer class="footer">
     <span>
         Copyright
         &copy;
-        2023-2024
-        <a href="https://zhaotong94.github.io/" style="color:#939393;">Tong&#39;Log</a>
+        -2024
+        <a href="http://localhost:1313/" style="color:#939393;">Tong&#39;Log</a>
         All Rights Reserved
     </span>
     
@@ -352,21 +465,6 @@ var _hmt = _hmt || [];
         }
     });
 </script>
-
-
-<script type="text/javascript"
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?
-config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true
-      }
-    });
-</script></body>
+</body>
 
 </html>
