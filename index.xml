@@ -2,155 +2,155 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tong&#39;Log</title>
-    <link>http://localhost:1313/</link>
+    <link>https://zhaotong94.github.io/</link>
     <description>Recent content on Tong&#39;Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Oct 2024 20:12:01 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Oct 2024 20:12:01 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First News</title>
-      <link>http://localhost:1313/news/my-first-news/</link>
+      <link>https://zhaotong94.github.io/news/my-first-news/</link>
       <pubDate>Wed, 30 Oct 2024 20:12:01 +0800</pubDate>
       
-      <guid>http://localhost:1313/news/my-first-news/</guid>
+      <guid>https://zhaotong94.github.io/news/my-first-news/</guid>
       <description>I would like to apply for a postdoctoral position in the AI-related field. I have a multidisciplinary background in mathematics, AI, high-performance computing and following advantages:
 Curiosity, Adaptability, and Self-Motivation. I am capable of working independently and eager to learn new knowledge, even willing to adopt a doctoral student mindset. I aim to contribute to highly original research. Additionally, I am open to discussing ideas with group members and assisting in guiding PhD students. Computational Resources. Due to my professional experience in the High Performance Computer Research Center, I have established good collaborative relationships with some leading supercomputing companies, internet companies, as well as distributed training centers in universities and research institutes. If necessary, I can provide the required computational resources for our group. Relevant Theoretical Foundation. I obtained my Ph.D. in the School of Mathematical Sciences, with strong algorithm analysis skills and the ability to learn new theories.</description>
     </item>
     
     <item>
       <title>How to create a small and smooth dynamic GIF for dynamical systems?</title>
-      <link>http://localhost:1313/blog/hcssdgds/</link>
+      <link>https://zhaotong94.github.io/blog/hcssdgds/</link>
       <pubDate>Wed, 23 Oct 2024 14:05:34 +0800</pubDate>
       
-      <guid>http://localhost:1313/blog/hcssdgds/</guid>
+      <guid>https://zhaotong94.github.io/blog/hcssdgds/</guid>
       <description>When giving a presentation on STEM disciplines, we usually need to draw a gif of some dynamical systems to express our ideas clearly. However, creating a portable, fluid, and authentic gif is challenging, it is very hard to find suitable parameters for drawing a gif.</description>
     </item>
     
     <item>
       <title>Paper_machine</title>
-      <link>http://localhost:1313/tech/paper_machine/</link>
+      <link>https://zhaotong94.github.io/tech/paper_machine/</link>
       <pubDate>Fri, 16 Aug 2024 19:10:20 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/paper_machine/</guid>
+      <guid>https://zhaotong94.github.io/tech/paper_machine/</guid>
       <description>代码生成算法 pip install latexify-py import latexify 表格生成 table 图像生成 draw</description>
     </item>
     
     <item>
       <title>Latex_cmd</title>
-      <link>http://localhost:1313/tech/latex_cmd/</link>
+      <link>https://zhaotong94.github.io/tech/latex_cmd/</link>
       <pubDate>Fri, 16 Aug 2024 10:45:34 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/latex_cmd/</guid>
+      <guid>https://zhaotong94.github.io/tech/latex_cmd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Build_AI_env</title>
-      <link>http://localhost:1313/tech/build_ai_env/</link>
+      <link>https://zhaotong94.github.io/tech/build_ai_env/</link>
       <pubDate>Tue, 13 Aug 2024 17:11:06 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/build_ai_env/</guid>
+      <guid>https://zhaotong94.github.io/tech/build_ai_env/</guid>
       <description>用户目录下载anaconda curl anacoda 建立环境 conda create --name &amp;lt;env_name&amp;gt; python=3.9 激活环境 conda activate &amp;lt;env_name&amp;gt; 安装pytorch，官网寻找命令，注意与自己的cuda匹配 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 删除conda环境 conda env remove --name &amp;lt;env_name&amp;gt; 查看所有模块 module av 加载指定模块 module load &amp;lt;module_name&amp;gt; 添加环境变量 export PATH=&amp;lt;path_to_dir&amp;gt;:$PATH 列出当前已加载模块 module list 查询是哪个可执行二进制文件 which xxx</description>
     </item>
     
     <item>
       <title>Remote_cmd</title>
-      <link>http://localhost:1313/tech/remote_cmd/</link>
+      <link>https://zhaotong94.github.io/tech/remote_cmd/</link>
       <pubDate>Mon, 12 Aug 2024 19:39:13 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/remote_cmd/</guid>
+      <guid>https://zhaotong94.github.io/tech/remote_cmd/</guid>
       <description>下载文件 wget -O url_link 或者 curl -O url_link 使用代理 proxychains4 wget -O url_link 或者 proxychains4 curl -O url_link proxychains4 使用ssh从当前计算机传递当前文件夹下所有文件到远程计算机的指定目录 scp -r ./* ./.??* user_name@IP_remote:~/path2traget_dir</description>
     </item>
     
     <item>
       <title>Vim_cmd</title>
-      <link>http://localhost:1313/tech/vim_cmd/</link>
+      <link>https://zhaotong94.github.io/tech/vim_cmd/</link>
       <pubDate>Mon, 12 Aug 2024 11:04:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/vim_cmd/</guid>
+      <guid>https://zhaotong94.github.io/tech/vim_cmd/</guid>
       <description>打开文件：vim &amp;lt;file_name&amp;gt; 编辑模式：i 退出编辑模式：esc 保存并退出：:x 复制：非编辑模式下，光标起始位V，光标结束位y。 粘贴：非编辑模式下，光标位后p, 光标位前P。</description>
     </item>
     
     <item>
       <title>Slurm_cmd</title>
-      <link>http://localhost:1313/tech/slurm_cmd/</link>
+      <link>https://zhaotong94.github.io/tech/slurm_cmd/</link>
       <pubDate>Mon, 12 Aug 2024 11:04:30 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/slurm_cmd/</guid>
+      <guid>https://zhaotong94.github.io/tech/slurm_cmd/</guid>
       <description>提交任务 sbatch &amp;lt;file_name.sh&amp;gt; 查看提交队列信息 squeue &amp;lt;file_name.sh&amp;gt; 查看详细提交队列信息 squeue -o &amp;#34;%.18i %.9P %.10j %.8u %.8T %.10M %.9l %.6D %N %.20b&amp;#34; 登录并独占某一节点，实行交互式作业 salloc -p your_partition_name -N1</description>
     </item>
     
     <item>
       <title>Git_cmd</title>
-      <link>http://localhost:1313/tech/git_cmd/</link>
+      <link>https://zhaotong94.github.io/tech/git_cmd/</link>
       <pubDate>Mon, 12 Aug 2024 11:03:43 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/git_cmd/</guid>
+      <guid>https://zhaotong94.github.io/tech/git_cmd/</guid>
       <description>新建本地仓库 git init 添加到暂存区 git add . 添加到仓储区 git commit -m &amp;#34;content for labeling this submission&amp;#34; 删除 git remove 删除仓库 git remove 删除分支 git remove 新建分支 git branch 查看分支 git branch 切换分支 git switch 重新命名分支 git 连接远程（github）分支 git remote add 创建ssh密钥 ssh key-gen</description>
     </item>
     
     <item>
       <title>Redis scan</title>
-      <link>http://localhost:1313/tech/tech1/</link>
+      <link>https://zhaotong94.github.io/tech/tech1/</link>
       <pubDate>Wed, 30 Nov 2022 15:55:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/tech1/</guid>
+      <guid>https://zhaotong94.github.io/tech/tech1/</guid>
       <description>示例文本</description>
     </item>
     
     <item>
       <title>Reproducing Kernel Hilbert Space</title>
-      <link>http://localhost:1313/blog/rkhs/</link>
+      <link>https://zhaotong94.github.io/blog/rkhs/</link>
       <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/blog/rkhs/</guid>
+      <guid>https://zhaotong94.github.io/blog/rkhs/</guid>
       <description>A brief introduction to reproducing kernel hilbert Space.</description>
     </item>
     
     <item>
       <title>Memo</title>
-      <link>http://localhost:1313/tech/memo/</link>
+      <link>https://zhaotong94.github.io/tech/memo/</link>
       <pubDate>Thu, 05 May 2022 00:18:15 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/memo/</guid>
+      <guid>https://zhaotong94.github.io/tech/memo/</guid>
       <description>首页加coming，最近更新，news，代表pub等部分，头像放到右侧。语录部分。data怎么用。添加文末讨论与FAQ。 bib管理最好能和latex一致，添加code，paper，supp，ppt，vedio，doi，abstract，blog，poster等模块。 hugo markdo</description>
     </item>
     
     <item>
       <title>Running out of letters? Unclear meanings in papers?</title>
-      <link>http://localhost:1313/tech/tech/</link>
+      <link>https://zhaotong94.github.io/tech/tech/</link>
       <pubDate>Thu, 05 May 2022 00:17:58 +0800</pubDate>
       
-      <guid>http://localhost:1313/tech/tech/</guid>
+      <guid>https://zhaotong94.github.io/tech/tech/</guid>
       <description>Common usage of Latin and Greek letters in computer and mathematical papers.</description>
     </item>
     
     
     <item>
       <title>👨‍🦱CV</title>
-      <link>http://localhost:1313/cv/</link>
+      <link>https://zhaotong94.github.io/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/cv/</guid>
+      <guid>https://zhaotong94.github.io/cv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>📄Publications</title>
-      <link>http://localhost:1313/publications/</link>
+      <link>https://zhaotong94.github.io/publications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/publications/</guid>
+      <guid>https://zhaotong94.github.io/publications/</guid>
       <description>@inproceedings{hu2023rlekf, abbr={AAAI}, title={RLEKF: An optimizer for deep potential with ab initio accuracy}, author={Hu*, Siyu and Zhang*, Wentao and Sha, Qiuchen and Pan, Feng and Wang, Lin-Wang and Jia, Weile and Tan, Guangming and Zhao†, Tong}, booktitle={Proceedings of the AAAI Conference on Artificial Intelligence}, volume={37}, number={7}, pages={7910–7918}, year={2023}, abstract={It is imperative to accelerate the training of neural network force field such as Deep Potential, which usually requires thousands of images based on first-principles calculation and a couple of days to generate an accurate potential energy surface. To this end, we propose a novel optimizer named reorganized layer extended Kalman filtering (RLEKF), an optimized version of global extended Kalman filtering (GEKF) with a strategy of splitting big and gathering small</description>
     </item>
     
     
     <item>
       <title>🤔FAQ</title>
-      <link>http://localhost:1313/faq/</link>
+      <link>https://zhaotong94.github.io/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/faq/</guid>
+      <guid>https://zhaotong94.github.io/faq/</guid>
       <description>Q: Why have you decided not to pursue a position as an assistant professor?/ A: There are three main reasons: first, I wish to engage in more creative research at institutions with higher research standards to satisfy my intellectual curiosity; second, I want to enrich my research and life experiences; and third, I am more passionate about artificial intelligence.// Q: What if I see something incorrect in the post?/ A: Please feel free to let me know，and I will correct it.// Q: Can I repost or translate the blog?/ A: It is my pleasure, but please clearly indicate that it is a repost and pin this notice at the top.</description>
     </item>
     
