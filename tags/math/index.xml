@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Math on Tong&#39;Log</title>
-    <link>http://localhost:1313/tags/math/</link>
+    <link>https://zhaotong94.github.io/tags/math/</link>
     <description>Recent content in Math on Tong&#39;Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 23 Oct 2024 14:05:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Oct 2024 14:05:34 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to create a small and smooth dynamic GIF for dynamical systems?</title>
-      <link>http://localhost:1313/blog/hcssdgds/</link>
+      <link>https://zhaotong94.github.io/blog/hcssdgds/</link>
       <pubDate>Wed, 23 Oct 2024 14:05:34 +0800</pubDate>
       
-      <guid>http://localhost:1313/blog/hcssdgds/</guid>
+      <guid>https://zhaotong94.github.io/blog/hcssdgds/</guid>
       <description>When giving a presentation on STEM disciplines, we usually need to draw a gif of some dynamical systems to express our ideas clearly. However, creating a portable, fluid, and authentic gif is challenging, it is very hard to find suitable parameters for drawing a gif.</description>
     </item>
     
     <item>
       <title>Reproducing Kernel Hilbert Space</title>
-      <link>http://localhost:1313/blog/rkhs/</link>
+      <link>https://zhaotong94.github.io/blog/rkhs/</link>
       <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/blog/rkhs/</guid>
+      <guid>https://zhaotong94.github.io/blog/rkhs/</guid>
       <description>Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal</description>
     </item>
     

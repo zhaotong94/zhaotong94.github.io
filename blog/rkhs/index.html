@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -22,18 +22,18 @@
 <meta name="keywords" content="">
 <meta name="description" content="Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal">
 <meta name="author" content="Tong">
-<link rel="canonical" href="http://localhost:1313/blog/rkhs/">
+<link rel="canonical" href="https://zhaotong94.github.io/blog/rkhs/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.3f7471d1364ac2821f8f1e4385c785173052bce1f0f0a97e54765d123a4057db.css" integrity="sha256-P3Rx0TZKwoIfjx5DhceFFzBSvOHw8Kl&#43;VHZdEjpAV9s=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
         onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="http://localhost:1313/img/capybara.jpg">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/img/capybara.jpg">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/img/capybara.jpg">
-<link rel="apple-touch-icon" href="http://localhost:1313/img/capybara.jpg">
-<link rel="mask-icon" href="http://localhost:1313/img/capybara.jpg">
+<link rel="icon" href="https://zhaotong94.github.io/img/capybara.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zhaotong94.github.io/img/capybara.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zhaotong94.github.io/img/capybara.jpg">
+<link rel="apple-touch-icon" href="https://zhaotong94.github.io/img/capybara.jpg">
+<link rel="mask-icon" href="https://zhaotong94.github.io/img/capybara.jpg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/rkhs/">
+<link rel="alternate" hreflang="en" href="https://zhaotong94.github.io/blog/rkhs/">
 <noscript>
     <style>
         #theme-toggle,
@@ -121,7 +121,7 @@ var _hmt = _hmt || [];
 <meta property="og:title" content="Reproducing Kernel Hilbert Space" />
 <meta property="og:description" content="Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/blog/rkhs/" /><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://zhaotong94.github.io/blog/rkhs/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2022-05-05T00:18:23+08:00" />
 <meta property="article:modified_time" content="2022-05-05T00:18:23+08:00" />
 
@@ -140,13 +140,13 @@ var _hmt = _hmt || [];
           "@type": "ListItem",
           "position":  1 ,
           "name": "✍Blog",
-          "item": "http://localhost:1313/blog/"
+          "item": "https://zhaotong94.github.io/blog/"
         }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Reproducing Kernel Hilbert Space",
-      "item": "http://localhost:1313/blog/rkhs/"
+      "item": "https://zhaotong94.github.io/blog/rkhs/"
     }
   ]
 }
@@ -172,14 +172,14 @@ var _hmt = _hmt || [];
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/blog/rkhs/"
+    "@id": "https://zhaotong94.github.io/blog/rkhs/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Tong'Log",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/img/capybara.jpg"
+      "url": "https://zhaotong94.github.io/img/capybara.jpg"
     }
   }
 }
@@ -217,8 +217,8 @@ var _hmt = _hmt || [];
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Tong&#39;Log (Alt + H)">
-            <img src="http://localhost:1313/img/capybara.jpg" alt="logo" aria-label="logo"
+            <a href="https://zhaotong94.github.io/" accesskey="h" title="Tong&#39;Log (Alt + H)">
+            <img src="https://zhaotong94.github.io/img/capybara.jpg" alt="logo" aria-label="logo"
                  height="35">Tong&#39;Log</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
@@ -247,37 +247,37 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="🏠Home">
+                <a href="https://zhaotong94.github.io/" title="🏠Home">
                 <span>🏠Home</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/blog" title="✍Blog">
+                <a href="https://zhaotong94.github.io/blog" title="✍Blog">
                 <span>✍Blog</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/publications" title="📄Publications">
+                <a href="https://zhaotong94.github.io/publications" title="📄Publications">
                 <span>📄Publications</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags" title="🏷️Tags">
+                <a href="https://zhaotong94.github.io/tags" title="🏷️Tags">
                 <span>🏷️Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/cv" title="👨‍🦱CV">
+                <a href="https://zhaotong94.github.io/cv" title="👨‍🦱CV">
                 <span>👨‍🦱CV</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/faq" title="🤔FAQ">
+                <a href="https://zhaotong94.github.io/faq" title="🤔FAQ">
                 <span>🤔FAQ</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search" title="🔍Search (Alt &#43; /)" accesskey=/>
+                <a href="https://zhaotong94.github.io/search" title="🔍Search (Alt &#43; /)" accesskey=/>
                 <span>🔍Search</span>
                 </a>
             </li>
@@ -296,7 +296,7 @@ var _hmt = _hmt || [];
 <article class="post-single">
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="http://localhost:1313/">🏠 Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/blog/">✍Blog</a></div>
+            <div class="breadcrumbs"><a href="https://zhaotong94.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://zhaotong94.github.io/blog/">✍Blog</a></div>
             <h1 class="post-title">
                 Reproducing Kernel Hilbert Space
             </h1>
@@ -352,7 +352,7 @@ var _hmt = _hmt || [];
         <span class="fa fa-tags" style="opacity: 0.8"></span>
         <span>
             <span class="post-tags-meta">
-                <a href="http://localhost:1313/tags/math/" style="color: var(--secondary)!important;">Math</a>
+                <a href="https://zhaotong94.github.io/tags/math/" style="color: var(--secondary)!important;">Math</a>
             </span>
         </span>
     </span>
@@ -373,7 +373,7 @@ var _hmt = _hmt || [];
                             <script>
                                 let url = document.documentURI
                                 
-                                let dnsUrl = "http://localhost:1313/"
+                                let dnsUrl = "https://zhaotong94.github.io/"
                                 let urlSplit = url.split(dnsUrl)
                                 let finalUrl = urlSplit[1]
                                 if (finalUrl[0] !== '/') {
@@ -699,7 +699,7 @@ Besides, considering an embedding map $I:\mathcal{H}\to\mathbb{L}^{2}$, we find 
         Copyright
         &copy;
         2023-2024
-        <a href="http://localhost:1313/" style="color:#939393;">Tong&#39;Log</a>
+        <a href="https://zhaotong94.github.io/" style="color:#939393;">Tong&#39;Log</a>
         <span>
             Powered by
             <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

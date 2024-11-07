@@ -2,88 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/news/</loc>
+    <loc>https://zhaotong94.github.io/news/</loc>
     <lastmod>2024-10-30T20:12:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/news/my-first-news/</loc>
+    <loc>https://zhaotong94.github.io/news/my-first-news/</loc>
     <lastmod>2024-10-30T20:12:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://zhaotong94.github.io/</loc>
     <lastmod>2024-10-30T20:12:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>https://zhaotong94.github.io/blog/</loc>
     <lastmod>2024-10-23T14:05:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/hcssdgds/</loc>
+    <loc>https://zhaotong94.github.io/blog/hcssdgds/</loc>
     <lastmod>2024-10-23T14:05:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/math/</loc>
+    <loc>https://zhaotong94.github.io/tags/math/</loc>
     <lastmod>2024-10-23T14:05:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://zhaotong94.github.io/tags/</loc>
     <lastmod>2024-10-23T14:05:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/</loc>
+    <loc>https://zhaotong94.github.io/tech/</loc>
     <lastmod>2024-08-16T19:10:20+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/paper_machine/</loc>
+    <loc>https://zhaotong94.github.io/tech/paper_machine/</loc>
     <lastmod>2024-08-16T19:10:20+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/latex_cmd/</loc>
+    <loc>https://zhaotong94.github.io/tech/latex_cmd/</loc>
     <lastmod>2024-08-16T10:45:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/build_ai_env/</loc>
+    <loc>https://zhaotong94.github.io/tech/build_ai_env/</loc>
     <lastmod>2024-08-13T17:11:06+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/remote_cmd/</loc>
+    <loc>https://zhaotong94.github.io/tech/remote_cmd/</loc>
     <lastmod>2024-08-12T19:39:13+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/vim_cmd/</loc>
+    <loc>https://zhaotong94.github.io/tech/vim_cmd/</loc>
     <lastmod>2024-08-12T11:04:49+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/slurm_cmd/</loc>
+    <loc>https://zhaotong94.github.io/tech/slurm_cmd/</loc>
     <lastmod>2024-08-12T11:04:30+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/git_cmd/</loc>
+    <loc>https://zhaotong94.github.io/tech/git_cmd/</loc>
     <lastmod>2024-08-12T11:03:43+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://zhaotong94.github.io/categories/</loc>
     <lastmod>2022-11-30T15:55:23+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/redis/</loc>
+    <loc>https://zhaotong94.github.io/tags/redis/</loc>
     <lastmod>2022-11-30T15:55:23+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/redis/</loc>
+    <loc>https://zhaotong94.github.io/categories/redis/</loc>
     <lastmod>2022-11-30T15:55:23+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/tech1/</loc>
+    <loc>https://zhaotong94.github.io/tech/tech1/</loc>
     <lastmod>2022-11-30T15:55:23+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tech/</loc>
+    <loc>https://zhaotong94.github.io/tags/tech/</loc>
     <lastmod>2022-11-30T15:55:23+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/rkhs/</loc>
+    <loc>https://zhaotong94.github.io/blog/rkhs/</loc>
     <lastmod>2022-05-05T00:18:23+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/life/</loc>
+    <loc>https://zhaotong94.github.io/tags/life/</loc>
     <lastmod>2022-05-05T00:18:15+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/memo/</loc>
+    <loc>https://zhaotong94.github.io/tech/memo/</loc>
     <lastmod>2022-05-05T00:18:15+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/tech/</loc>
+    <loc>https://zhaotong94.github.io/tech/tech/</loc>
     <lastmod>2022-05-05T00:17:58+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://zhaotong94.github.io/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/cv/</loc>
+    <loc>https://zhaotong94.github.io/cv/</loc>
   </url><url>
-    <loc>http://localhost:1313/publications/</loc>
+    <loc>https://zhaotong94.github.io/publications/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://zhaotong94.github.io/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://zhaotong94.github.io/series/</loc>
   </url><url>
-    <loc>http://localhost:1313/faq/</loc>
+    <loc>https://zhaotong94.github.io/faq/</loc>
   </url>
 </urlset>
