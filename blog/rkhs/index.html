@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-toc.min.css">
+    <link rel="stylesheet" href="/css/mdb.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    
+    
+
+    <script src="/js/theme.js"></script>
+    <script src="/js/common.js"></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Reproducing Kernel Hilbert Space | Tong&#39;Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal">
+<meta name="author" content="Tong">
+<link rel="canonical" href="http://localhost:1313/blog/rkhs/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3f7471d1364ac2821f8f1e4385c785173052bce1f0f0a97e54765d123a4057db.css" integrity="sha256-P3Rx0TZKwoIfjx5DhceFFzBSvOHw8Kl&#43;VHZdEjpAV9s=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+        onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/img/capybara.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/img/capybara.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/img/capybara.jpg">
+<link rel="apple-touch-icon" href="http://localhost:1313/img/capybara.jpg">
+<link rel="mask-icon" href="http://localhost:1313/img/capybara.jpg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/rkhs/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/javascript">
+    MathJax = {
+      tex: {
+        tags:"ams",
+        inlineMath: [['$', '$']],
+        displayMath: [['$$','$$']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    
+    
+    
+    
+  
+  </script>
+<script defer src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+
+<meta property="og:title" content="Reproducing Kernel Hilbert Space" />
+<meta property="og:description" content="Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/blog/rkhs/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-05-05T00:18:23+08:00" />
+<meta property="article:modified_time" content="2022-05-05T00:18:23+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reproducing Kernel Hilbert Space"/>
+<meta name="twitter:description" content="Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "✍Blog",
+          "item": "http://localhost:1313/blog/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Reproducing Kernel Hilbert Space",
+      "item": "http://localhost:1313/blog/rkhs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Reproducing Kernel Hilbert Space",
+  "name": "Reproducing Kernel Hilbert Space",
+  "description": "Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\\in[n]$ in $\\mathbb{R}^n$ $$ L_{i}:x\\mapsto \\left\\langle \\delta_i, x\\right\\rangle=x_i, \\forall x\\in\\mathbb{R}^n, $$ where $\\left\\langle \\cdot, \\cdot\\right\\rangle$ is linear functional notation and $\\delta_i(\\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\\cdots,1,\\cdots,0)$ in $\\mathbb{R}^n$ such that $$ \\left\\langle \\delta_i, x\\right\\rangle=\\left\\langle e_i, x\\right\\rangle_{\\mathbb{R}^n}, \\forall x\\in\\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\\left\\langle \\cdot, \\cdot\\right\\rangle_H$ such that $$ \\left\\langle \\delta_i, x\\right\\rangle=\\left\\langle k_i, x\\right\\rangle_{H}, \\forall x\\in\\mathbb{R}^n, $$ the property of expressing inner product $\\left\\langle x, y\\right\\rangle_H$ in $\\mathbb{R}^n$ as a production $$ x^{\\textsf{T}}Hy, \\forall x,y\\in\\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\\{e_1,e_2,\\cdots,e_n\\}$ bases in $ \\mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\\mathbb{R}^n$\nthe concept of evaluation functional $L_i$ at point $i\\in[n]$ in $\\mathbb{R}^n$ $$\rL_{i}:x\\mapsto \\left\\langle \\delta_i, x\\right\\rangle=x_i, \\forall x\\in\\mathbb{R}^n,\r$$ where $\\left\\langle \\cdot, \\cdot\\right\\rangle$ is linear functional notation and $\\delta_i(\\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\\cdots,1,\\cdots,0)$ in $\\mathbb{R}^n$ such that $$\r\\left\\langle \\delta_i, x\\right\\rangle=\\left\\langle e_i, x\\right\\rangle_{\\mathbb{R}^n}, \\forall x\\in\\mathbb{R}^n,\r$$ and more generally there exists $k_i$ in Hibert space with inner product $\\left\\langle \\cdot, \\cdot\\right\\rangle_H$ such that $$\r\\left\\langle \\delta_i, x\\right\\rangle=\\left\\langle k_i, x\\right\\rangle_{H}, \\forall x\\in\\mathbb{R}^n,\r$$ the property of expressing inner product $\\left\\langle x, y\\right\\rangle_H$ in $\\mathbb{R}^n$ as a production $$\rx^{\\textsf{T}}Hy, \\forall x,y\\in\\mathbb{R}^n,\r$$ the property that there exists an orthonormal basis $\\{e_1,e_2,\\cdots,e_n\\}$ bases in $ \\mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal matrix $$\rU=(e_1,e_2,\\cdots,e_n),\rU^{\\textsf{T}}HU=\\text{diag}(\\lambda_1,\\lambda_2,\\cdots,\\lambda_n)=\\sum_{i=1}^n\\lambda_ie_ie_i^\\textsf{T},\r$$ to corresponding ones in infinite dimensional linear space $\\mathcal{B}$ like followings, and we hope: an evalutation functional $L_x$ at point $x\\in\\mathcal{X}$ in infinite dimensional linear space $\\mathcal{B}(\\mathcal{X})$ of functions on set $\\mathcal{X}$ (usually card$(\\mathcal{X})\\geq\\aleph_0$) can be defined as $$\rL_{x}:f\\mapsto \\left\\langle \\delta_x, f\\right\\rangle=f(x), \\forall x\\in\\mathcal{X}, f\\in\\mathcal{B},\r$$ the eigenvector $\\delta_x(\\cdot)$ in $\\mathbb{L}^2(\\mathcal{X},\\mu)$ such that $$\r\\left\\langle \\delta_x, f\\right\\rangle=\\left\\langle \\delta_x, f\\right\\rangle_{\\mathbb{L}^2}, \\forall f\\in\\mathbb{L}^2(\\mathcal{X},\\mu),\r$$ where $\\mu$ is a measure, and more generally there exists $K_x(\\cdot)\\in\\mathcal{H}$ can be defined as $$\r\\left\\langle \\delta_x, f\\right\\rangle=\\left\\langle K_x, f\\right\\rangle_{\\mathcal{H}}, \\forall f\\in\\mathcal{H},\r$$ the inner product in Hilbert space $\\mathcal{H}$ can be defined as a binary integral form $$\r\\left\\langle f, g\\right\\rangle_\\mathcal{H}=\\int_{\\mathcal{X}\\times\\mathcal{X}} f(x)h(x,y)g(y)dxdy, \\forall x,y \\in\\mathcal{X}, f,g \\in\\mathcal{H},\r$$ there exists a set of orthonormal basis $\\phi(\\cdot,z)$ such that the inner product in a Hilbert space can be expressed in a “diagonal matrix” form, $$\r\\begin{align*}\r\\phi(z,w)^{\\textsf{T}}\u0026=\\phi(w,z),\\int_{\\mathcal{X}\\times\\mathcal{X}} \\phi^{\\textsf{T}}(z,w)h(w,z)\\phi(z,y)dwdz\\\\\r\u0026=\\int_{\\mathcal{X}\\times\\mathcal{X}} \\sigma(z)\\phi(x,z)\\phi(y,z)dz\\\\\r\u0026=\\sigma(y)\\delta(x-y).\r\\end{align*}\r$$ Conditions, Problems, and Solutions It is obviously that $L_x$ exists. Due to the motivation involves inner product, $\\mathcal{B}$ must be a Hilbert space $\\mathcal{B}:=\\mathcal{H}$.\nTo express the evaluation functional $L_x$ in the form of an inner product, we need to require that the linear functional is continuous (i.e. $sup_{f\\in\\mathcal{H}}\\frac{|L_x(f)|}{\\|f\\|_\\mathcal{H}}\u003c\\infty, \\forall x\\in\\mathcal{X}$), since the inner product must be continuous (i.e.$\\left\\langle f, g\\right\\rangle_\\mathcal{H}\\leq{\\|f\\|_\\mathcal{H}}{\\|g\\|_\\mathcal{H}}$). Then, the Riesz representation theorem implies that there exists a unique elements $K_x\\in\\mathcal{H}$ called reproducing kernel such that $\\left\\langle K_x, f\\right\\rangle_{\\mathcal{H}}=f(x),\\forall f\\in \\mathcal{H}$. Therefore, $\\left\\langle K_x, K_y\\right\\rangle_{\\mathcal{H}}=K_y(x):=K(y,x)$. Due to the sysmetry of inner product, $K(x,y)=K(y,x)$. In addition, $$\r\\mathcal{H}_0:=\\{f|f\\in\\overline{\\text{span}}\\{K_x(\\cdot)|x\\in{\\mathcal{X}}\\},\\left\\langle f, f\\right\\rangle_{\\mathcal{H}}\u003c\\infty\\}=\\mathcal{H}.\r$$ Considering Due to the motivation involves integral on $\\mathcal{X}$, we must introduce non-negative measure $\\mu$ (the sign is put into coefficient $f_K$) and define $$f:=\\int f_K(x)K(x,\\cdot)\\mu(dx)=\\sum_{i=1}^{\\infty}f_K(i)K(x_i,\\cdot)\u003c\\infty.$$ where $\\{K(x,\\cdot)|x\\in\\mathcal{X}, s.t. K(x,\\cdot)\\text{s} \\; \\text{form a basis with}\\;x\\;\\text{as less as possible}\\}=E$ is a basis set, since Hilbert space is complete (any point in it can be approximated by finite linear combination of basis). If $\\mathcal{H}$ is separable (e.g. $\\mathbb{L}^2(\\mathbb{R})$ and $\\mathbb{L}^2([0,1])$ with orthonormal basis Hermite polynomials $H_n(x)$ times $e^{-x^2/2}$ and Legendre polynomials), $\\text{card}(E)\\leq\\aleph_0$. If $\\text{card}(E)\u003e\\aleph_0$, we can choose a countable subset $E_0\\subset E$ to define $f$.\nOf course, we have $$\r\\begin{align*}\r\\|f\\|^2_\\mathcal{H}\u0026=\\left\\langle\\int f_K(x)K(x,\\cdot)\\mu(dx),\\int f_K(y)K(y,\\cdot)\\mu(dy)\\right\\rangle_{\\mathcal{H}}\\\\\r\u0026=\\int f_K(x)K(x,y)f_K(y)\\mu(dx)\\mu(dy)\\\\\r\u0026=\\int f(x)f_K(x)\\mu(dx)\u003c\\infty.\r\\end{align*}\r$$ The inner product is $$\r\\begin{align*}\r\\left\\langle f, g\\right\\rangle_\\mathcal{H}\u0026=\\left\\langle\\int f_K(x)K(x,\\cdot)\\mu(dx),\\int g_K(y)K(y,\\cdot)\\mu(dy)\\right\\rangle_{\\mathcal{H}}\\\\\r\u0026=\\int f_K(x)K(x,y)g_K(y)\\mu(dx)\\mu(dy)\u003c\\infty.\r\\end{align*}\r$$ For any generaly linearly independent basis set $E$ of $\\mathcal{H}$, and measure $\\mu_E$ on $E$, it behaves like in finite dimensional case $$\r\\left\\langle f, g\\right\\rangle_\\mathcal{H}=\\int_E f_E(e_x)H_E(e_x,e_y)g_E(e_y)\\mu_E(de_x)\\mu_E(de_y),\r$$ where $H_E$ is the representation of $\\left\\langle \\cdot, \\cdot \\right\\rangle_\\mathcal{H}$ and $f_E$ is the representation (coefficient) of $f$ under $E$ ($H_E(e_x,e_y):=\\left\\langle e_x, e_y\\right\\rangle_\\mathcal{H}, e_x(\\cdot), e_y(\\cdot)\\in E, f=\\int_E f_E(e_x)e_x(\\cdot)\\mu_E(de_x)$). If we can identify $(E,\\mu_E)$ with $(\\mathcal{x},\\mu) $, we have $$\r\\left\\langle f, g\\right\\rangle_\\mathcal{H}=\\int_\\mathcal{X} f_E(x)H_E(x,y)g_E(y)\\mu(dx)\\mu(dy).\r$$ For general cases, the measure $\\mu_E$ or $\\mu$ is count measure. Using Zorn’s Lemma, we know there exist a orthonormal basis $E$ of $\\mathcal{H}$, under which $$\r\\left\\langle f, g\\right\\rangle_\\mathcal{H}=\\int_E f_E(e_x)g_E(e_x)\\mu_E(de_x).\r$$ Fortunately, card($\\{K_x(\\cdot)\\})=\\aleph_0$ usually holds, but what is the condition required. Of course, $\\mathcal{H}$ is separable is a sufficient condition, but not pragmatic. In fact, if we regard it as a non-negative definite matrix $K(x,y)$ we hope we can obtain \\begin{equation*} K(x,y)=\\sum_{i=1}^{\\infty}\\sigma_i\\phi_i(x)\\phi_i(y). \\end{equation*} Luckily, the spectral theory guarantees the above equation holds, if $K$ is a compact operator. According to the requirement of spectral theory, one of following conditions should be satisfied:\nwe let $\\mu$ is $\\sigma$-finite measure, $K$ is squared-integrable on $\\mu\\otimes\\mu$, and then we find $T_K:\\mathbb{L}^{2}(\\mathcal{X})\\to \\mathbb{L}^{2}(\\mathcal{X})$, $$[T_{K}f](\\cdot)=\\int _{\\mathcal{X}}K(\\cdot,x)f(x)\\,d\\mu (x)$$ is a Hilbert–Schmidt operator (compact operator). Mercer’s theorem. we let $K$ is continuous, $\\mathcal{X}$ is compact, $\\mu$ is positive finite Borel measure, and then we get $T_K:\\mathbb{L}^{2}(\\mathcal{X})\\to \\mathbb{L}^{2}(\\mathcal{X})$ as $$[T_{K}f](\\cdot)=\\int _{\\mathcal{X}}K(\\cdot,x)f(x)\\,d\\mu (x)$$ is compact operator. In both cases, $K(x, \\cdot)\\in \\mathbb{L}^{2}(\\mathcal{X},\\mu),\\;\\forall x\\in\\mathcal{X}$. $K(x,y)$ can be regard as inner product ‘martix’ in both $\\mathbb{L}^{2}(\\mathcal{X},\\mu)$ space $(\\left\\langle e_x, e_y\\right\\rangle_{\\mathbb{L}^{2}})$ and $\\mathcal{H}$ space $(\\left\\langle K_x, K_y\\right\\rangle_\\mathcal{H})$. From $\\mathbb{L}^{2}(\\mathcal{X},\\mu)$ space perspective, $$\r\\begin{align}\rK(x,y)\u0026=\\sum_{i=1}^{\\infty}\\sigma_i\\phi_i(x)\\phi_i(y).\\label{k}\r\\end{align}\r$$ From $\\mathcal{H}$ space perspective, under basis $$\rh_i(\\cdot)=\\int K(\\cdot,x)\\phi_i(x)\\mu(dx)=\\sigma_i\\phi_i(\\cdot),\r$$ inner product $\\left\\langle \\cdot, \\cdot\\right\\rangle_\\mathcal{H}$ can be written as diag($\\sigma_1,\\sigma_2,\\cdots$), hence $$\r\\left\\langle h_i, h_j\\right\\rangle_\\mathcal{H}=\\sigma_i\\sigma_j\\left\\langle \\phi_i, \\phi_j\\right\\rangle_\\mathcal{H}=\\sigma_i\\delta_{ij}=\\sigma_i\\left\\langle \\phi_i, \\phi_j\\right\\rangle_{\\mathbb{L}^{2}(\\mathcal{X})} ,\r$$ For case one, we have $\\sum_i \\sigma_i^2\u003c\\infty$ ($\\sigma_i\\to 0$), therefore Im$(T_{K})\\subset\\mathcal{H}\\subset\\mathbb{L}^{2}(\\mathcal{X})$. Conditions in case two is strictly stronger than that in one, it comes to the same conclusion as in case one. The difference is the decomposition of $K$ \\eqref{k} in case one converges in $\\mathbb{L}^{2}$ norm rather than uniformly in case two.\nRemark: Conditions on reproducing kernel $K(\\cdot, \\cdot)$ (integrable, continuous) embed $\\mathcal{H}$ into a countable dimensional subspace of $\\mathbb{R}^\\mathcal{X}$ without considering the topology on these two space. For any $h\\in\\mathcal{H}$, we can not evaluate $h(x)$ at $x$ randowly, as values at different points fulfill some constraints inherted from reproducing kernel $K$. The operator $T_K$ can be seen as a infinite dimensional version SVD decomposition. Due to bounded $\\sigma_i$, $T_K$ compresses and projects a point in $\\mathbb{L}^2$ to $\\mathcal{H}$. Therefore, $$\r\\left\\langle f, g\\right\\rangle_\\mathcal{H}=\\left\\langle \\sum_i\\left\\langle f, \\phi_i\\right\\rangle_{\\mathbb{L}^{2}}\\phi_i , \\sum_j\\left\\langle f, \\phi_j\\right\\rangle_{\\mathbb{L}^{2}}\\phi_j\\right\\rangle_\\mathcal{H}=\\sum_i\\frac{\\left\\langle f, \\phi_i\\right\\rangle_{\\mathbb{L}^{2}}\\left\\langle g, \\phi_i\\right\\rangle_{\\mathbb{L}^{2}}}{\\sigma_i}.\r$$ Besides, considering an embedding map $I:\\mathcal{H}\\to\\mathbb{L}^{2}$, we find the map is continuous (i.e.$\\|x-y\\|_{\\mathbb{L}^{2}}\\leq \\|I(x)-I(y)\\|_\\mathcal{H},\\; \\forall x,y\\in \\mathcal{H}$). Hence topologies ($\\mathcal{T}_{\\mathbb{L}^{2}}, \\mathcal{T}_\\mathcal{H}$) determinded by their metric have relationship $\\mathcal{T}_{\\mathbb{L}^{2}}\\subset\\mathcal{T}_\\mathcal{H}$.\nAll the conclusion can be applied to complex cases. Some values need to be written as their conjugates.\nExamples Gaussian linear polynomial ",
+  "wordCount" : "1027",
+  "inLanguage": "en",
+  "datePublished": "2022-05-05T00:18:23+08:00",
+  "dateModified": "2022-05-05T00:18:23+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Tong"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/blog/rkhs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tong'Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/img/capybara.jpg"
+    }
+  }
+}
+</script>
+    
+    
+    
+</head>
+
+<body class="" id="top">
+<script>
+    (function () {
+        let  arr,reg = new RegExp("(^| )"+"change-themes"+"=([^;]*)(;|$)");
+        if(arr = document.cookie.match(reg)) {
+        } else {
+            if (new Date().getHours() >= 19 || new Date().getHours() < 6) {
+                document.body.classList.add('dark');
+                localStorage.setItem("pref-theme", 'dark');
+            } else {
+                document.body.classList.remove('dark');
+                localStorage.setItem("pref-theme", 'light');
+            }
+        }
+    })()
+
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Tong&#39;Log (Alt + H)">
+            <img src="http://localhost:1313/img/capybara.jpg" alt="logo" aria-label="logo"
+                 height="35">Tong&#39;Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="🏠Home">
+                <span>🏠Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/blog" title="✍Blog">
+                <span>✍Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications" title="📄Publications">
+                <span>📄Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags" title="🏷️Tags">
+                <span>🏷️Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/cv" title="👨‍🦱CV">
+                <span>👨‍🦱CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/faq" title="🤔FAQ">
+                <span>🤔FAQ</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="🔍Search (Alt &#43; /)" accesskey=/>
+                <span>🔍Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
+
+<article class="post-single">
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="http://localhost:1313/">🏠 Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/blog/">✍Blog</a></div>
+            <h1 class="post-title">
+                Reproducing Kernel Hilbert Space
+            </h1>
+            <div class="post-meta">
+
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+
+    .parent-post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+</style>
+
+<span class="parent-post-meta">
+    <span id="post_meta_style_1">
+        <span class="fa fa-calendar-check-o"></span>
+        <span>May 5, 2022
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>1027 words
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>3 mins
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>Tong
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+                <a href="http://localhost:1313/tags/math/" style="color: var(--secondary)!important;">Math</a>
+            </span>
+        </span>
+    </span>
+</span>
+<span style="opacity: 0.8;">
+                    <span id="post_meta_style_7">
+                        &nbsp;&nbsp;
+                        <span class="fa fa-eye" ></span>
+                        <span>
+                            <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+                            &nbsp;&nbsp;
+                        </span>
+                    </span>
+                    <span id="post_meta_style_8">
+                        <span class="fa fa-commenting-o"></span>
+                        <span>
+                            <script src="https://cdn.staticfile.org/twikoo/1.5.8/twikoo.all.min.js"></script>
+                            <script>
+                                let url = document.documentURI
+                                
+                                let dnsUrl = "http://localhost:1313/"
+                                let urlSplit = url.split(dnsUrl)
+                                let finalUrl = urlSplit[1]
+                                if (finalUrl[0] !== '/') {
+                                    finalUrl = '/'+finalUrl
+                                }
+                                twikoo.getCommentsCount({
+                                    envId:  null , 
+                                region:  null , 
+                                urls: [ 
+                                    
+                                    finalUrl,
+                                ],
+                                    includeReply: false 
+                                }).then(function (res) {
+                                    let count = res[0].count
+                                    const obj = document.getElementById("comment_count");
+                                    obj.innerText = count
+                                    
+                                    
+                                    
+                                }).catch(function (err) {
+                                    
+                                    console.error(err);
+                                });
+                            </script>
+                            <span id="comment_count"></span>
+                        </span>
+                    </span>
+                </span>
+
+</div>
+        </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#motivation" aria-label="Motivation">Motivation</a></li>
+                <li>
+                    <a href="#conditions-problems-and-solutions" aria-label="Conditions, Problems, and Solutions">Conditions, Problems, and Solutions</a></li>
+                <li>
+                    <a href="#examples" aria-label="Examples">Examples</a>
+                </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><h1 id="motivation">Motivation<a hidden class="anchor" aria-hidden="true" href="#motivation">#</a></h1>
+<p>The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$</p>
+<ol>
+<li>the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$
+$$
+L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n,
+$$
+where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$,</li>
+<li>the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that
+$$
+\left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n,
+$$
+and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that
+$$
+\left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n,
+$$</li>
+<li>the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production
+$$
+x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n,
+$$</li>
+<li>the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal matrix
+$$
+U=(e_1,e_2,\cdots,e_n),
+U^{\textsf{T}}HU=\text{diag}(\lambda_1,\lambda_2,\cdots,\lambda_n)=\sum_{i=1}^n\lambda_ie_ie_i^\textsf{T},
+$$
+to corresponding ones in infinite dimensional linear space $\mathcal{B}$ like followings, and we hope:</li>
+<li>an evalutation functional $L_x$ at point $x\in\mathcal{X}$ in infinite dimensional linear space $\mathcal{B}(\mathcal{X})$ of functions on set $\mathcal{X}$ (usually card$(\mathcal{X})\geq\aleph_0$) can be defined as
+$$
+L_{x}:f\mapsto \left\langle \delta_x, f\right\rangle=f(x), \forall x\in\mathcal{X}, f\in\mathcal{B},
+$$</li>
+<li>the eigenvector $\delta_x(\cdot)$ in $\mathbb{L}^2(\mathcal{X},\mu)$ such that
+$$
+\left\langle \delta_x, f\right\rangle=\left\langle \delta_x, f\right\rangle_{\mathbb{L}^2}, \forall f\in\mathbb{L}^2(\mathcal{X},\mu),
+$$
+where $\mu$ is a measure, and more generally there exists $K_x(\cdot)\in\mathcal{H}$ can be defined as
+$$
+\left\langle \delta_x, f\right\rangle=\left\langle K_x, f\right\rangle_{\mathcal{H}}, \forall f\in\mathcal{H},
+$$</li>
+<li>the inner product in Hilbert space $\mathcal{H}$ can be defined as a binary integral form
+$$
+\left\langle f, g\right\rangle_\mathcal{H}=\int_{\mathcal{X}\times\mathcal{X}} f(x)h(x,y)g(y)dxdy, \forall x,y \in\mathcal{X}, f,g \in\mathcal{H},
+$$</li>
+<li>there exists a set of orthonormal basis $\phi(\cdot,z)$ such that the inner product in a Hilbert space can be expressed in a &ldquo;diagonal matrix&rdquo; form,
+$$
+\begin{align*}
+\phi(z,w)^{\textsf{T}}&=\phi(w,z),\int_{\mathcal{X}\times\mathcal{X}} \phi^{\textsf{T}}(z,w)h(w,z)\phi(z,y)dwdz\\
+&=\int_{\mathcal{X}\times\mathcal{X}} \sigma(z)\phi(x,z)\phi(y,z)dz\\
+&=\sigma(y)\delta(x-y).
+\end{align*}
+$$</li>
+</ol>
+<h1 id="conditions-problems-and-solutions">Conditions, Problems, and Solutions<a hidden class="anchor" aria-hidden="true" href="#conditions-problems-and-solutions">#</a></h1>
+<ol>
+<li>
+<p>It is obviously that $L_x$ exists. Due to the motivation involves inner product, $\mathcal{B}$ must be a Hilbert space $\mathcal{B}:=\mathcal{H}$.</p>
+</li>
+<li>
+<p>To express the evaluation functional $L_x$ in the form of an inner product, we need to require that the linear functional is continuous (i.e. $sup_{f\in\mathcal{H}}\frac{|L_x(f)|}{\|f\|_\mathcal{H}}<\infty, \forall x\in\mathcal{X}$), since the inner product must be continuous (i.e.$\left\langle f, g\right\rangle_\mathcal{H}\leq{\|f\|_\mathcal{H}}{\|g\|_\mathcal{H}}$). Then, the Riesz representation theorem implies that there exists a unique elements $K_x\in\mathcal{H}$ called reproducing kernel such that $\left\langle K_x, f\right\rangle_{\mathcal{H}}=f(x),\forall f\in \mathcal{H}$. Therefore, $\left\langle K_x, K_y\right\rangle_{\mathcal{H}}=K_y(x):=K(y,x)$. Due to the sysmetry of inner product, $K(x,y)=K(y,x)$. In addition,
+</p>
+$$
+\mathcal{H}_0:=\{f|f\in\overline{\text{span}}\{K_x(\cdot)|x\in{\mathcal{X}}\},\left\langle f, f\right\rangle_{\mathcal{H}}<\infty\}=\mathcal{H}.
+$$
+</li>
+<li>
+<p>Considering Due to the motivation involves integral on $\mathcal{X}$, we must introduce non-negative measure $\mu$ (the sign is put into coefficient $f_K$) and define
+</p>
+$$f:=\int f_K(x)K(x,\cdot)\mu(dx)=\sum_{i=1}^{\infty}f_K(i)K(x_i,\cdot)<\infty.$$
+<p>
+where $\{K(x,\cdot)|x\in\mathcal{X}, s.t. K(x,\cdot)\text{s} \; \text{form a basis with}\;x\;\text{as less as possible}\}=E$ is a basis set, since Hilbert space is complete (any point in it can be approximated by finite linear combination of basis). If $\mathcal{H}$ is separable (e.g. $\mathbb{L}^2(\mathbb{R})$ and $\mathbb{L}^2([0,1])$ with orthonormal basis <a href="https://en.wikipedia.org/wiki/Hermite_polynomials">Hermite polynomials</a> $H_n(x)$ times $e^{-x^2/2}$ and <a href="https://en.wikipedia.org/wiki/Legendre_polynomials">Legendre polynomials</a>), $\text{card}(E)\leq\aleph_0$. If $\text{card}(E)>\aleph_0$, we can choose a countable subset $E_0\subset E$ to define $f$.<br>
+Of course, we have
+</p>
+$$
+\begin{align*}
+\|f\|^2_\mathcal{H}&=\left\langle\int f_K(x)K(x,\cdot)\mu(dx),\int f_K(y)K(y,\cdot)\mu(dy)\right\rangle_{\mathcal{H}}\\
+&=\int f_K(x)K(x,y)f_K(y)\mu(dx)\mu(dy)\\
+&=\int f(x)f_K(x)\mu(dx)<\infty.
+\end{align*}
+$$
+<p>
+The inner product is
+</p>
+$$
+\begin{align*}
+\left\langle f, g\right\rangle_\mathcal{H}&=\left\langle\int f_K(x)K(x,\cdot)\mu(dx),\int g_K(y)K(y,\cdot)\mu(dy)\right\rangle_{\mathcal{H}}\\
+&=\int f_K(x)K(x,y)g_K(y)\mu(dx)\mu(dy)<\infty.
+\end{align*}
+$$
+<p>
+For any generaly linearly independent basis set $E$ of $\mathcal{H}$, and measure $\mu_E$ on $E$, it behaves like in finite dimensional case
+</p>
+$$
+\left\langle f, g\right\rangle_\mathcal{H}=\int_E f_E(e_x)H_E(e_x,e_y)g_E(e_y)\mu_E(de_x)\mu_E(de_y),
+$$
+<p>
+where $H_E$ is the representation of $\left\langle \cdot, \cdot \right\rangle_\mathcal{H}$ and $f_E$ is the representation (coefficient) of $f$ under $E$ ($H_E(e_x,e_y):=\left\langle e_x, e_y\right\rangle_\mathcal{H}, e_x(\cdot), e_y(\cdot)\in E, f=\int_E f_E(e_x)e_x(\cdot)\mu_E(de_x)$). If we can identify $(E,\mu_E)$ with $(\mathcal{x},\mu) $, we have
+</p>
+$$
+\left\langle f, g\right\rangle_\mathcal{H}=\int_\mathcal{X} f_E(x)H_E(x,y)g_E(y)\mu(dx)\mu(dy).
+$$
+</li>
+<li>
+<p>For general cases, the measure $\mu_E$ or $\mu$ is count measure. Using <a href="">Zorn&rsquo;s Lemma</a>, we know there exist a orthonormal basis $E$ of $\mathcal{H}$, under which
+</p>
+$$
+\left\langle f, g\right\rangle_\mathcal{H}=\int_E f_E(e_x)g_E(e_x)\mu_E(de_x).
+$$
+</li>
+<li>
+<p>Fortunately, card($\{K_x(\cdot)\})=\aleph_0$ usually holds, but what is the condition required. Of course, $\mathcal{H}$ is separable is a sufficient condition, but not pragmatic. In fact, if we regard it as a non-negative definite matrix $K(x,y)$ we hope we can obtain
+\begin{equation*}
+K(x,y)=\sum_{i=1}^{\infty}\sigma_i\phi_i(x)\phi_i(y).
+\end{equation*}
+Luckily, the <a href="https://en.wikipedia.org/wiki/Spectral_theorem">spectral theory</a> guarantees the above equation holds, if $K$ is a compact operator. According to the requirement of <a href="https://en.wikipedia.org/wiki/Spectral_theorem">spectral theory</a>, one of following conditions should be satisfied:</p>
+<ol>
+<li>we let $\mu$ is $\sigma$-finite measure, $K$ is squared-integrable on $\mu\otimes\mu$, and then we find $T_K:\mathbb{L}^{2}(\mathcal{X})\to \mathbb{L}^{2}(\mathcal{X})$, $$[T_{K}f](\cdot)=\int _{\mathcal{X}}K(\cdot,x)f(x)\,d\mu (x)$$ is a Hilbert–Schmidt operator (compact operator).</li>
+<li><a href="https://en.wikipedia.org/wiki/Mercer%27s_theorem">Mercer&rsquo;s theorem</a>. we let $K$ is continuous, $\mathcal{X}$ is compact, $\mu$ is positive finite <a href="https://en.wikipedia.org/wiki/Borel_measure">Borel measure</a>, and then we get $T_K:\mathbb{L}^{2}(\mathcal{X})\to \mathbb{L}^{2}(\mathcal{X})$ as $$[T_{K}f](\cdot)=\int _{\mathcal{X}}K(\cdot,x)f(x)\,d\mu (x)$$ is compact operator.</li>
+</ol>
+<p>In both cases, $K(x, \cdot)\in \mathbb{L}^{2}(\mathcal{X},\mu),\;\forall x\in\mathcal{X}$. $K(x,y)$ can be regard as inner product &lsquo;martix&rsquo; in both $\mathbb{L}^{2}(\mathcal{X},\mu)$ space $(\left\langle e_x, e_y\right\rangle_{\mathbb{L}^{2}})$ and $\mathcal{H}$ space $(\left\langle K_x, K_y\right\rangle_\mathcal{H})$. From $\mathbb{L}^{2}(\mathcal{X},\mu)$ space perspective,
+</p>
+$$
+    \begin{align}
+    K(x,y)&=\sum_{i=1}^{\infty}\sigma_i\phi_i(x)\phi_i(y).\label{k}
+    \end{align}
+    $$
+<p>
+From $\mathcal{H}$ space perspective, under basis
+</p>
+$$
+    h_i(\cdot)=\int K(\cdot,x)\phi_i(x)\mu(dx)=\sigma_i\phi_i(\cdot),
+    $$
+<p>
+inner product $\left\langle \cdot, \cdot\right\rangle_\mathcal{H}$ can be written as diag($\sigma_1,\sigma_2,\cdots$), hence
+</p>
+$$
+    \left\langle h_i, h_j\right\rangle_\mathcal{H}=\sigma_i\sigma_j\left\langle \phi_i, \phi_j\right\rangle_\mathcal{H}=\sigma_i\delta_{ij}=\sigma_i\left\langle \phi_i, \phi_j\right\rangle_{\mathbb{L}^{2}(\mathcal{X})} ,
+    $$
+<p>For case one, we have $\sum_i \sigma_i^2<\infty$ ($\sigma_i\to 0$), therefore Im$(T_{K})\subset\mathcal{H}\subset\mathbb{L}^{2}(\mathcal{X})$. Conditions in case two is strictly stronger than that in one, it comes to the same conclusion as in case one. The difference is the decomposition of $K$ \eqref{k} in case one converges in $\mathbb{L}^{2}$ norm rather than uniformly in case two.</p>
+<p><strong>Remark:</strong> Conditions on reproducing kernel $K(\cdot, \cdot)$ (integrable, continuous) embed $\mathcal{H}$ into a countable dimensional subspace of $\mathbb{R}^\mathcal{X}$ without considering the topology on these two space. For any $h\in\mathcal{H}$, we can not evaluate $h(x)$ at $x$ randowly, as values at different points fulfill some constraints inherted from reproducing kernel $K$. The operator $T_K$ can be seen as a infinite dimensional version SVD decomposition. Due to bounded $\sigma_i$, $T_K$ compresses and projects a point in $\mathbb{L}^2$ to $\mathcal{H}$. Therefore,
+</p>
+$$
+    \left\langle f, g\right\rangle_\mathcal{H}=\left\langle \sum_i\left\langle f, \phi_i\right\rangle_{\mathbb{L}^{2}}\phi_i , \sum_j\left\langle f, \phi_j\right\rangle_{\mathbb{L}^{2}}\phi_j\right\rangle_\mathcal{H}=\sum_i\frac{\left\langle f, \phi_i\right\rangle_{\mathbb{L}^{2}}\left\langle g, \phi_i\right\rangle_{\mathbb{L}^{2}}}{\sigma_i}.
+    $$
+<p>
+Besides, considering an embedding map $I:\mathcal{H}\to\mathbb{L}^{2}$, we find the map is continuous (i.e.$\|x-y\|_{\mathbb{L}^{2}}\leq \|I(x)-I(y)\|_\mathcal{H},\; \forall x,y\in \mathcal{H}$). Hence topologies ($\mathcal{T}_{\mathbb{L}^{2}}, \mathcal{T}_\mathcal{H}$) determinded by their metric have relationship $\mathcal{T}_{\mathbb{L}^{2}}\subset\mathcal{T}_\mathcal{H}$.</p>
+</li>
+<li>
+<p>All the conclusion can be applied to complex cases. Some values need to be written as their conjugates.</p>
+</li>
+</ol>
+<h1 id="examples">Examples<a hidden class="anchor" aria-hidden="true" href="#examples">#</a></h1>
+<ol>
+<li>Gaussian</li>
+<li>linear</li>
+<li>polynomial</li>
+</ol>
+
+
+            
+        </div>
+
+        
+        
+        
+        
+        
+        
+
+        <footer class="post-footer">
+            
+
+        </footer>
+    </div>
+
+<style>
+    .comments_details summary::marker {
+        font-size: 15px;
+        content: '👉Comments';
+        color: var(--content);
+    }
+    .comments_details[open] summary::marker{
+        font-size: 15px;
+        content: '👇Collapse';
+        color: var(--content);
+    }
+</style>
+
+
+<div>
+    <details class="comments_details">
+        <summary style="cursor: pointer; margin: 50px 0 20px 0;width: 130px;">
+            <span style="font-size: 20px;color: var(--content);">...</span>
+        </summary>
+        <div id="tcomment"></div>
+    </details>
+    <script src="https://cdn.staticfile.org/twikoo/1.5.8/twikoo.all.min.js">
+    </script>
+    <script>
+        twikoo.init({
+            envId:  null ,
+        el: "#tcomment",
+            lang: 'zh-CN',
+            region:  null ,
+        path: window.TWIKOO_MAGIC_PATH||window.location.pathname,
+        })
+    </script>
+</div>
+</article>
+</main>
+
+<footer class="footer">
+    <span>
+        Copyright
+        &copy;
+        2023-2024
+        <a href="http://localhost:1313/" style="color:#939393;">Tong&#39;Log</a>
+        <span>
+            Powered by
+            <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+            <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        </span>
+    </span>
+    
+    <span id="busuanzi_container">
+        <span class="fa fa-user"></span> <span id="busuanzi_value_site_uv"></span>
+        <span class="fa fa-eye"></span> <span id="busuanzi_value_site_pv"></span>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        (function() {
+            document.cookie = "change-themes" + "="+ escape ("false");
+        })()
+
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    });
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    
+                
+                    "Copyright Notice: This article is an original piece by '+Tong\u0027Log+', licensed under the CC 4.0 BY-SA copyright agreement. Please include the original source link and this statement when reprinting." + "\r\n Original link: " + location.href;
+                let textData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    
+                
+                    "Copyright Notice: This article is an original piece by '+Tong\u0027Log+', licensed under the CC 4.0 BY-SA copyright agreement. Please include the original source link and this statement when reprinting." + "\r\n Original link: " + location.href;
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '✂️copy';
+
+        function copyingDone() {
+            copybutton.innerText = '👌🏻copied!';
+            setTimeout(() => {
+                copybutton.innerText = '✂️copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent +
+                    '\r\n————————————————\r\n' +
+                
+                
+                    "Copyright Notice: This article is an original piece by '+Tong\u0027Log+', licensed under the CC 4.0 BY-SA copyright agreement. Please include the original source link and this statement when reprinting." + "\r\n Original link: " + location.href;
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {}
+            selection.removeRange(range);
+        });
+
+        let language = codeblock.className.replaceAll("language-", "")
+        let macTool = document.createElement("div")
+        let macTool1 = document.createElement("div")
+        let macTool2 = document.createElement("div")
+        let macTool3 = document.createElement("div")
+        let languageType = document.createElement("div")
+        languageType.innerText = language
+        macTool.setAttribute('class', 'mac-tool')
+        macTool1.setAttribute('class', 'mac bb1')
+        macTool2.setAttribute('class', 'mac bb2')
+        macTool3.setAttribute('class', 'mac bb3')
+        languageType.setAttribute('class', 'language-type')
+        macTool.appendChild(macTool1)
+        macTool.appendChild(macTool2)
+        macTool.appendChild(macTool3)
+        macTool.appendChild(languageType)
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        }
+    });
+</script>
+
+
+
+
+</body>
+
+</html>
