@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Math on Tong&#39;Log</title>
-    <link>https://zhaotong94.github.io/tags/math/</link>
+    <link>http://localhost:1313/tags/math/</link>
     <description>Recent content in Math on Tong&#39;Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 23 Oct 2024 14:05:34 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Oct 2024 14:05:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to create a small and smooth dynamic GIF for dynamical systems?</title>
-      <link>https://zhaotong94.github.io/blog/hcssdgds/</link>
+      <link>http://localhost:1313/blog/hcssdgds/</link>
       <pubDate>Wed, 23 Oct 2024 14:05:34 +0800</pubDate>
       
-      <guid>https://zhaotong94.github.io/blog/hcssdgds/</guid>
+      <guid>http://localhost:1313/blog/hcssdgds/</guid>
       <description>When giving a presentation on STEM disciplines, we usually need to draw a gif of some dynamical systems to express our ideas clearly. However, creating a portable, fluid, and authentic gif is challenging, it is very hard to find suitable parameters for drawing a gif.</description>
     </item>
     
     <item>
       <title>Reproducing Kernel Hilbert Space</title>
-      <link>https://zhaotong94.github.io/blog/rkhs/</link>
+      <link>http://localhost:1313/blog/rkhs/</link>
       <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
       
-      <guid>https://zhaotong94.github.io/blog/rkhs/</guid>
+      <guid>http://localhost:1313/blog/rkhs/</guid>
       <description>A brief introduction to reproducing kernel hilbert Space.</description>
     </item>
     

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>📄News on Tong&#39;Log</title>
-    <link>https://zhaotong94.github.io/news/</link>
+    <link>http://localhost:1313/news/</link>
     <description>Recent content in 📄News on Tong&#39;Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Oct 2024 20:12:01 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/news/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Oct 2024 20:12:01 +0800</lastBuildDate><atom:link href="http://localhost:1313/news/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First News</title>
-      <link>https://zhaotong94.github.io/news/my-first-news/</link>
+      <link>http://localhost:1313/news/my-first-news/</link>
       <pubDate>Wed, 30 Oct 2024 20:12:01 +0800</pubDate>
       
-      <guid>https://zhaotong94.github.io/news/my-first-news/</guid>
+      <guid>http://localhost:1313/news/my-first-news/</guid>
       <description>I would like to apply for a postdoctoral position in the AI-related field. I have a multidisciplinary background in mathematics, AI, high-performance computing and following advantages:
 Curiosity, Adaptability, and Self-Motivation. I am capable of working independently and eager to learn new knowledge, even willing to adopt a doctoral student mindset. I aim to contribute to highly original research. Additionally, I am open to discussing ideas with group members and assisting in guiding PhD students. Computational Resources. Due to my professional experience in the High Performance Computer Research Center, I have established good collaborative relationships with some leading supercomputing companies, internet companies, as well as distributed training centers in universities and research institutes. If necessary, I can provide the required computational resources for our group. Relevant Theoretical Foundation. I obtained my Ph.D. in the School of Mathematical Sciences, with strong algorithm analysis skills and the ability to learn new theories.</description>
     </item>
