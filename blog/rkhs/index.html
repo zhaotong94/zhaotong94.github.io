@@ -20,7 +20,7 @@
 <meta name="robots" content="index, follow">
 <title>Reproducing Kernel Hilbert Space | Tong&#39;Log</title>
 <meta name="keywords" content="">
-<meta name="description" content="Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal">
+<meta name="description" content="A brief introduction to reproducing kernel hilbert Space.">
 <meta name="author" content="Tong">
 <link rel="canonical" href="https://zhaotong94.github.io/blog/rkhs/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
@@ -118,7 +118,7 @@ var _hmt = _hmt || [];
   
 
 <meta property="og:title" content="Reproducing Kernel Hilbert Space" />
-<meta property="og:description" content="Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal" />
+<meta property="og:description" content="A brief introduction to reproducing kernel hilbert Space." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zhaotong94.github.io/blog/rkhs/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2022-05-05T00:18:23+08:00" />
@@ -126,7 +126,7 @@ var _hmt = _hmt || [];
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reproducing Kernel Hilbert Space"/>
-<meta name="twitter:description" content="Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\in[n]$ in $\mathbb{R}^n$ $$ L_{i}:x\mapsto \left\langle \delta_i, x\right\rangle=x_i, \forall x\in\mathbb{R}^n, $$ where $\left\langle \cdot, \cdot\right\rangle$ is linear functional notation and $\delta_i(\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\cdots,1,\cdots,0)$ in $\mathbb{R}^n$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle e_i, x\right\rangle_{\mathbb{R}^n}, \forall x\in\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\left\langle \cdot, \cdot\right\rangle_H$ such that $$ \left\langle \delta_i, x\right\rangle=\left\langle k_i, x\right\rangle_{H}, \forall x\in\mathbb{R}^n, $$ the property of expressing inner product $\left\langle x, y\right\rangle_H$ in $\mathbb{R}^n$ as a production $$ x^{\textsf{T}}Hy, \forall x,y\in\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\{e_1,e_2,\cdots,e_n\}$ bases in $ \mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal"/>
+<meta name="twitter:description" content="A brief introduction to reproducing kernel hilbert Space."/>
 
 
 <script type="application/ld+json">
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
   "@type": "BlogPosting",
   "headline": "Reproducing Kernel Hilbert Space",
   "name": "Reproducing Kernel Hilbert Space",
-  "description": "Motivation The direct motivation of RKHS is to extend the following concepts and properties in $\\mathbb{R}^n$ the concept of evaluation functional $L_i$ at point $i\\in[n]$ in $\\mathbb{R}^n$ $$ L_{i}:x\\mapsto \\left\\langle \\delta_i, x\\right\\rangle=x_i, \\forall x\\in\\mathbb{R}^n, $$ where $\\left\\langle \\cdot, \\cdot\\right\\rangle$ is linear functional notation and $\\delta_i(\\cdot)$ is Dirac function with mass at $i$, the eigenvector $e_i:=(0,0,\\cdots,1,\\cdots,0)$ in $\\mathbb{R}^n$ such that $$ \\left\\langle \\delta_i, x\\right\\rangle=\\left\\langle e_i, x\\right\\rangle_{\\mathbb{R}^n}, \\forall x\\in\\mathbb{R}^n, $$ and more generally there exists $k_i$ in Hibert space with inner product $\\left\\langle \\cdot, \\cdot\\right\\rangle_H$ such that $$ \\left\\langle \\delta_i, x\\right\\rangle=\\left\\langle k_i, x\\right\\rangle_{H}, \\forall x\\in\\mathbb{R}^n, $$ the property of expressing inner product $\\left\\langle x, y\\right\\rangle_H$ in $\\mathbb{R}^n$ as a production $$ x^{\\textsf{T}}Hy, \\forall x,y\\in\\mathbb{R}^n, $$ the property that there exists an orthonormal basis $\\{e_1,e_2,\\cdots,e_n\\}$ bases in $ \\mathbb{R}^n $ such that the above positive definite matrix can be denoted as a diagonal",
+  "description": "A brief introduction to reproducing kernel hilbert Space.",
   "keywords": [
     ""
   ],
@@ -299,6 +299,9 @@ var _hmt = _hmt || [];
             <h1 class="post-title">
                 Reproducing Kernel Hilbert Space
             </h1>
+            <div class="post-description">
+                A brief introduction to reproducing kernel hilbert Space.
+            </div>
             <div class="post-meta">
 
 <style>
