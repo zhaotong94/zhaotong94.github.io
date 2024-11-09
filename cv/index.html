@@ -860,22 +860,23 @@ var _hmt = _hmt || [];
           <img draggable="false" src="https://zhaotong94.github.io/profile.jpg" alt="profile image" title=""
           height="132" width="99"  style="overflow: auto;float: right; margin-right: 20px;"/>
           <h2 style="font-weight: bold; margin-top: 20px; padding-top: 20px; padding-left: 10px;">Tong Zhao Ph.D.</h2>
-          
+      
           <h6 style="font-weight: bold; margin-top: 20px; padding-left: 10px;">✉️tongzhao.zhaot@gmail.com&nbsp;🌐https://zhaotong94.github.io/</h6>
+      
           <div style="clear: both;"></div>
-    
       
         
-      
-      
-      <a class="anchor" id="education"></a>
-      <div class="card mt-3 p-3">
-        <h3 class="card-title font-weight-medium">Education 
           
-        </h3>
-        <div>
-          
-            <ul class="card-text font-weight-light list-group list-group-flush">
+        
+        
+        <a class="anchor" id="education"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Education 
+            
+          </h3>
+          <div>
+            
+              <ul class="card-text font-weight-light list-group list-group-flush">
     
     
       <li class="list-group-item">
@@ -960,22 +961,23 @@ var _hmt = _hmt || [];
     
   </ul>
   
-          
+            
+          </div>
         </div>
-      </div>
-    
+     
       
         
-      
-      
-      <a class="anchor" id="experience"></a>
-      <div class="card mt-3 p-3">
-        <h3 class="card-title font-weight-medium">Experience 
           
-        </h3>
-        <div>
-          
-            <ul class="card-text font-weight-light list-group list-group-flush">
+        
+        
+        <a class="anchor" id="experience"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Experience 
+            
+          </h3>
+          <div>
+            
+              <ul class="card-text font-weight-light list-group list-group-flush">
     
     
       <li class="list-group-item">
@@ -1020,22 +1022,23 @@ var _hmt = _hmt || [];
     
   </ul>
   
-          
+            
+          </div>
         </div>
-      </div>
-    
+     
       
         
-      
-      
-      <a class="anchor" id="selected publications"></a>
-      <div class="card mt-3 p-3">
-        <h3 class="card-title font-weight-medium">Selected Publications 
           
-        </h3>
-        <div>
-          
-            <ul class="publications card-text font-weight-light list-group list-group-flush">
+        
+        
+        <a class="anchor" id="selected publications"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Selected Publications 
+            
+          </h3>
+          <div>
+            
+              <ul class="publications card-text font-weight-light list-group list-group-flush">
     
     
     
@@ -1203,22 +1206,23 @@ var _hmt = _hmt || [];
     
   </ul>
    
-          
+            
+          </div>
         </div>
-      </div>
-    
+     
       
         
-      
-      
-      <a class="anchor" id="awards"></a>
-      <div class="card mt-3 p-3">
-        <h3 class="card-title font-weight-medium">Awards 
           
-        </h3>
-        <div>
-          
-            <ul class="card-text font-weight-light list-group list-group-flush">
+        
+        
+        <a class="anchor" id="awards"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Awards 
+            
+          </h3>
+          <div>
+            
+              <ul class="card-text font-weight-light list-group list-group-flush">
   
   
   
@@ -1396,21 +1400,22 @@ var _hmt = _hmt || [];
 </ul>
 
 
-          
+            
+          </div>
         </div>
-      </div>
-    
+     
       
         
           
-      
+            
         
           
-  </div>
+              
+    </div>
 
 
 
-  </div>
+</div>
 
 </main>
 
@@ -1613,39 +1618,50 @@ var _hmt = _hmt || [];
             
             content.style.transform = "scale(0.75)"; 
             content.style.transformOrigin = "top center"; 
-         
+            content.style.maxHeight = "297mm"; 
+
             
             html2pdf()
-            .from(content)  
-            .set({
-                html2canvas: {
-                    scale: 3,                
-                    logging: true,           
-                    useCORS: true,           
-                    allowTaint: true,        
-                    backgroundColor: "#F0F0F0", 
-                    
-                    
-                },
-                jsPDF: {
-                    unit: "mm",              
-                    format: "a4",            
-                    orientation: "portrait", 
-                    margins: {               
-                        top: 20,             
-                        left: 20,            
-                        bottom: 20,          
-                        right: 20            
+                .from(content)  
+                .set({
+                    html2canvas: {
+                        scale: 3,                
+                        logging: true,           
+                        useCORS: true,           
+                        allowTaint: true,        
+                        backgroundColor: "#F0F0F0", 
+                    },
+                    jsPDF: {
+                        unit: "mm",              
+                        format: "a4",            
+                        orientation: "portrait", 
+                        margins: {               
+                            top: 20,             
+                            left: 20,            
+                            bottom: 20,          
+                            right: 20            
+                        }
                     }
-                }
-            })
-            .save("tongzhao_cv.pdf");  
+                })
+                .toPdf() 
+                .get('pdf') 
+                .then(function (pdf) {
+                    const pageCount = pdf.internal.getNumberOfPages(); 
+
+                    
+                    if (pageCount > 1) {
+                        pdf.deletePage(pageCount);  
+                    }
+
+                    
+                    pdf.save("tongzhao_cv.pdf");
+                });
         });
     });
-    </script>
-    
-    
-    
-    </body>
+</script>
+
+
+
+</body>
 
 </html>

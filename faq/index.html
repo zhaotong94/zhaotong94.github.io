@@ -515,39 +515,50 @@ A: It is my pleasure, but please clearly indicate that it is a repost and pin th
             
             content.style.transform = "scale(0.75)"; 
             content.style.transformOrigin = "top center"; 
-         
+            content.style.maxHeight = "297mm"; 
+
             
             html2pdf()
-            .from(content)  
-            .set({
-                html2canvas: {
-                    scale: 3,                
-                    logging: true,           
-                    useCORS: true,           
-                    allowTaint: true,        
-                    backgroundColor: "#F0F0F0", 
-                    
-                    
-                },
-                jsPDF: {
-                    unit: "mm",              
-                    format: "a4",            
-                    orientation: "portrait", 
-                    margins: {               
-                        top: 20,             
-                        left: 20,            
-                        bottom: 20,          
-                        right: 20            
+                .from(content)  
+                .set({
+                    html2canvas: {
+                        scale: 3,                
+                        logging: true,           
+                        useCORS: true,           
+                        allowTaint: true,        
+                        backgroundColor: "#F0F0F0", 
+                    },
+                    jsPDF: {
+                        unit: "mm",              
+                        format: "a4",            
+                        orientation: "portrait", 
+                        margins: {               
+                            top: 20,             
+                            left: 20,            
+                            bottom: 20,          
+                            right: 20            
+                        }
                     }
-                }
-            })
-            .save("tongzhao_cv.pdf");  
+                })
+                .toPdf() 
+                .get('pdf') 
+                .then(function (pdf) {
+                    const pageCount = pdf.internal.getNumberOfPages(); 
+
+                    
+                    if (pageCount > 1) {
+                        pdf.deletePage(pageCount);  
+                    }
+
+                    
+                    pdf.save("tongzhao_cv.pdf");
+                });
         });
     });
-    </script>
-    
-    
-    
-    </body>
+</script>
+
+
+
+</body>
 
 </html>
