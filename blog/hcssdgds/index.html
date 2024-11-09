@@ -3,6 +3,13 @@
 
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.2/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.24/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-toc.min.css">
@@ -10,7 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     
 
     <script src="/js/theme.js"></script>
@@ -287,12 +294,12 @@ var _hmt = _hmt || [];
 <style>
     i[id*="post_meta_style"] {
         display: flex;
-        align-items: center;
+        align-items: right;
         margin: 0 0 10px 0;
     }
 </style>
 
-<article class="post-single">
+<article class="post-single"  style="float: right;">
     <div id="single-content">
         <header class="post-header">
             <div class="breadcrumbs"><a href="https://zhaotong94.github.io/">🏠 Home</a>&nbsp;»&nbsp;<a href="https://zhaotong94.github.io/blog/">✍Blog</a></div>
@@ -473,8 +480,10 @@ var _hmt = _hmt || [];
         const width = document.body.scrollWidth;
         if (width - main - (toc * 2) - (gap * 4) > 0) {
             document.getElementById("toc-container").classList.add("wide");
+            document.querySelector('.main').style.float = "right";
         } else {
             document.getElementById("toc-container").classList.remove("wide");
+            
         }
     }
 
@@ -547,6 +556,18 @@ $$
 
 
             
+            <h1>Citation</h1>
+            <p>Cited as: </p>
+            <div style="border-left: 2px solid #000; padding-left: 10px;">Zhao, Tong. (Oct &nbsp;2024). “How to create a small and smooth dynamic GIF for dynamical systems?”. Tong’Log. <br> https://zhaotong94.github.io/blog/hcssdgds/.</div>
+            <p>Or</p>
+            <div class="highlight"><pre><code class="bibtex">@article{zhao2024how,
+    title   = "How to create a small and smooth dynamic GIF for dynamical systems?",
+    author  = "Zhao, Tong",
+    journal = "zhaotong94.github.io",
+    year    = "2024",
+    month   = "Oct",
+    url     = "https://zhaotong94.github.io/blog/hcssdgds/"}</code></pre></div>
+        
         </div>
 
         
@@ -598,7 +619,7 @@ $$
 </article>
 </main>
 
-<footer class="footer">
+<footer class="footer" style="clear: both;">
     <span>
         Copyright
         &copy;
@@ -693,7 +714,7 @@ $$
 
 <script>
     document.body.addEventListener('copy', function (e) {
-        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50 && window.getSelection().anchorNode.parentNode.nodeName !== 'CODE') {
             let clipboardData = e.clipboardData || window.clipboardData;
             if (clipboardData) {
                 e.preventDefault();
@@ -729,11 +750,7 @@ $$
 
         copybutton.addEventListener('click', (cb) => {
             if ('clipboard' in navigator) {
-                let text = codeblock.textContent +
-                    '\r\n————————————————\r\n' +
-                
-                
-                    "Copyright Notice: This article is an original piece by '+Tong\u0027Log+', licensed under the CC 4.0 BY-SA copyright agreement. Please include the original source link and this statement when reprinting." + "\r\n Original link: " + location.href;
+                let text = codeblock.textContent
                 navigator.clipboard.writeText(text);
                 copyingDone();
                 return;
@@ -788,6 +805,52 @@ $$
 
 
 
-</body>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#generatePDF").click(function () {
+            
+            const content = document.getElementById("resume").cloneNode(true);
+            content.style.display = "block"; 
+
+            
+            content.style.transform = "scale(0.75)"; 
+            content.style.transformOrigin = "top center"; 
+         
+            
+            html2pdf()
+            .from(content)  
+            .set({
+                html2canvas: {
+                    scale: 3,                
+                    logging: true,           
+                    useCORS: true,           
+                    allowTaint: true,        
+                    backgroundColor: "#F0F0F0", 
+                    
+                    
+                },
+                jsPDF: {
+                    unit: "mm",              
+                    format: "a4",            
+                    orientation: "portrait", 
+                    margins: {               
+                        top: 20,             
+                        left: 20,            
+                        bottom: 20,          
+                        right: 20            
+                    }
+                }
+            })
+            .save("tongzhao_cv.pdf");  
+        });
+    });
+    </script>
+    
+    
+    
+    </body>
 
 </html>
