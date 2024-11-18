@@ -6,7 +6,16 @@
     <description>Recent content in ✍Blog on Tong&#39;Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 23 Oct 2024 14:05:34 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Nov 2024 17:38:00 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connections among Over-determination, Under-Determination, Least-Squares, Pseudo-Inverse, and SVD Decomposition.</title>
+      <link>https://zhaotong94.github.io/blog/codudlspisvd/</link>
+      <pubDate>Mon, 18 Nov 2024 17:38:00 +0800</pubDate>
+      
+      <guid>https://zhaotong94.github.io/blog/codudlspisvd/</guid>
+      <description>Considering a linear equation $$ \begin{align} Ax=b,\label{le} \end{align} $$ where $A\in \mathbb{R}^{n\times m}, x\in\mathbb{R}^{m}$ and $b\in\mathbb{R}^{n}$. If $m &lt; n$, we call the equation over-determinated. Else if $m&gt;n$, we call the equation under-determinated. For over-determinated system, it usually does not have a solution, if $b$ lies out of the space spaned by column vectors $a_i$ of $A$. Therefore, to solve the problem, we first project both side of the equation into the space spaned by $a_i$. So, we do $$ \begin{align} A^{\textsf{T}}Ax=A^{\textsf{T}}b.\label{pls} \end{align} $$ If $A^{\textsf{T}}A$ is invertible, we have $$ \begin{align*} x=(A^{\textsf{T}}A)^{-1}A^{\textsf{T}}b. \end{align*} $$ On least squares perspective, it is equavalent to the following problem $$ \begin{align*} \min_x f(x)=\|Ax-b\|^2. \end{align*} $$ Via setting $\nabla f=0$, we also have equation \eqref{pls}. If $A^{\textsf{T}}A$ is not invertible, we will treat it in the same way as in under-determinated case. For under-determinated</description>
+    </item>
+    
     <item>
       <title>How to create a small and smooth dynamic GIF for dynamical systems?</title>
       <link>https://zhaotong94.github.io/blog/hcssdgds/</link>

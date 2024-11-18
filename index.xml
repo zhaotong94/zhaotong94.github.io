@@ -6,7 +6,16 @@
     <description>Recent content on Tong&#39;Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Oct 2024 20:12:01 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Nov 2024 17:38:00 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connections among Over-determination, Under-Determination, Least-Squares, Pseudo-Inverse, and SVD Decomposition.</title>
+      <link>https://zhaotong94.github.io/blog/codudlspisvd/</link>
+      <pubDate>Mon, 18 Nov 2024 17:38:00 +0800</pubDate>
+      
+      <guid>https://zhaotong94.github.io/blog/codudlspisvd/</guid>
+      <description>Considering a linear equation $$ \begin{align} Ax=b,\label{le} \end{align} $$ where $A\in \mathbb{R}^{n\times m}, x\in\mathbb{R}^{m}$ and $b\in\mathbb{R}^{n}$. If $m &lt; n$, we call the equation over-determinated. Else if $m&gt;n$, we call the equation under-determinated. For over-determinated system, it usually does not have a solution, if $b$ lies out of the space spaned by column vectors $a_i$ of $A$. Therefore, to solve the problem, we first project both side of the equation into the space spaned by $a_i$. So, we do $$ \begin{align} A^{\textsf{T}}Ax=A^{\textsf{T}}b.\label{pls} \end{align} $$ If $A^{\textsf{T}}A$ is invertible, we have $$ \begin{align*} x=(A^{\textsf{T}}A)^{-1}A^{\textsf{T}}b. \end{align*} $$ On least squares perspective, it is equavalent to the following problem $$ \begin{align*} \min_x f(x)=\|Ax-b\|^2. \end{align*} $$ Via setting $\nabla f=0$, we also have equation \eqref{pls}. If $A^{\textsf{T}}A$ is not invertible, we will treat it in the same way as in under-determinated case. For under-determinated</description>
+    </item>
+    
     <item>
       <title>My First News</title>
       <link>https://zhaotong94.github.io/news/my-first-news/</link>
@@ -113,7 +122,7 @@ Curiosity, Adaptability, and Self-Motivation. I am capable of working independen
       <pubDate>Thu, 05 May 2022 00:18:15 +0800</pubDate>
       
       <guid>https://zhaotong94.github.io/tech/memo/</guid>
-      <description>首页加coming，最近更新, 语录，添加文末讨论部分。 添加code，paper，supp，ppt，vedio，doi，abstract，blog，poster等模块。 hugo markdown作图 外微分，联络，黎曼几何 强化学习，控制 最优控制角度理解ddpm bsde的理解 马里万导数的理解 布</description>
+      <description>首页加coming，最近更新, 语录，文末讨论, rss订阅部分。 添加code，supp，ppt，vedio，doi，blog，poster等模块。 hugo markdown作图 外微分，联络，黎曼几何 强化学习，控制 最优控制角度理解ddpm bsde的理解 马里万导数的理解 布尔巴基学派 范畴与函子 拟</description>
     </item>
     
     <item>
