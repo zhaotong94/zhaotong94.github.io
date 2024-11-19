@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DMRG on Tong&#39;Log</title>
+    <link>https://zhaotong94.github.io/tags/dmrg/</link>
+    <description>Recent content in DMRG on Tong&#39;Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Nov 2024 20:00:57 +0800</lastBuildDate><atom:link href="https://zhaotong94.github.io/tags/dmrg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tensor Train for Function Representation</title>
+      <link>https://zhaotong94.github.io/blog/ttfr/</link>
+      <pubDate>Mon, 18 Nov 2024 20:00:57 +0800</pubDate>
+      
+      <guid>https://zhaotong94.github.io/blog/ttfr/</guid>
+      <description>Considering an arbitrary continuous function $\phi(\mathbf{r})$ on the cube $\mathbf{r} = (x,y,z) \in [0, b]^3$, we approximate $ x $ via a zero-one tuple $(x_1x_2x_3...x_n)\in \{0,1\}^n$ using the following formula: $$ \begin{align*} x \approx b( \frac{x_1}{2^1} + \frac{x_2}{2^2} + \dots + \frac{x_n}{2^n}). \end{align*} $$ Doing the same thing for $y$ and $z$, we can approximately write $\phi(\mathbf{r})$ down in an &amp;ldquo;enumerate&amp;rdquo; form as tensor $$ \begin{align*} \phi(\mathbf{r})\approx\Phi_{x_1x_2...x_ny_1y_2...y_nz_1z_2...z_n}=:\Phi_{\mathbf{r}}, \end{align*} $$ where $\Phi_{\mathbf{r}}$ is a large tensor of $(2^n)^3$ elements. In order to represent the function $\phi(\mathbf{r})$ more accurately, it is necessary to have a fine grid, that is, a sufficiently large $n$. However, an exponentially increasing space complexity is prohibitively high. So, how to reduce the space complexity as much as possible while maintaining a competitive accuracy? For any tensor can be unfolded as a tensor train, more general, tensor network,</description>
+    </item>
+    
+  </channel>
+</rss>

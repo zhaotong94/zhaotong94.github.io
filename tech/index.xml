@@ -71,21 +71,12 @@
     </item>
     
     <item>
-      <title>Redis scan</title>
-      <link>https://zhaotong94.github.io/tech/tech1/</link>
-      <pubDate>Wed, 30 Nov 2022 15:55:23 +0800</pubDate>
-      
-      <guid>https://zhaotong94.github.io/tech/tech1/</guid>
-      <description>示例文本</description>
-    </item>
-    
-    <item>
       <title>Memo</title>
       <link>https://zhaotong94.github.io/tech/memo/</link>
       <pubDate>Thu, 05 May 2022 00:18:15 +0800</pubDate>
       
       <guid>https://zhaotong94.github.io/tech/memo/</guid>
-      <description>首页加coming，最近更新, 语录，文末讨论, rss订阅部分。 添加code，supp，ppt，vedio，doi，blog，poster等模块。 hugo markdown作图 外微分，联络，黎曼几何 强化学习，控制 最优控制角度理解ddpm bsde的理解 马里万导数的理解 布尔巴基学派 范畴与函子 拟</description>
+      <description>首页加coming，最近更新, 语录，文末讨论, rss订阅部分, 平板手机浏览博文不能正确显示。 添加code，supp，ppt，vedio，doi，blog，poster等模块。 hugo markdown作图 外微分，联络，黎曼几何 强化学习，控制 最优控制角度理解ddpm bsde的理解 马里万导数</description>
     </item>
     
     <item>
